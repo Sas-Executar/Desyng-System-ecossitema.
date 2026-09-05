@@ -1,0 +1,42 @@
+/*
+ * typography.css — aplica a escala tipográfica de tokens/design-tokens.json.
+ * IBM Plex Sans para leitura/interface, IBM Plex Mono restrito a IDs/dados/código
+ * (OBSERVED: ADR-SYSTEM.md). Carregar via @font-face do provedor escolhido
+ * (self-hosted recomendado — ver TEC-002 em 00_GOVERNANCE/DS-FORM-001_RESPONSES.csv).
+ */
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  font-feature-settings: "tnum" 1; /* tabular numbers para dados/IDs, DS-FORM-001-TYP-009 */
+}
+
+.text-display   { font-size: var(--font-size-display); line-height: var(--line-height-display); font-weight: var(--font-weight-display); letter-spacing: var(--letter-spacing-display); }
+.text-h1        { font-size: var(--font-size-h1); line-height: var(--line-height-h1); font-weight: var(--font-weight-h1); letter-spacing: var(--letter-spacing-h1); }
+.text-h2        { font-size: var(--font-size-h2); line-height: var(--line-height-h2); font-weight: var(--font-weight-h2); letter-spacing: var(--letter-spacing-h2); }
+.text-h3        { font-size: var(--font-size-h3); line-height: var(--line-height-h3); font-weight: var(--font-weight-h3); letter-spacing: var(--letter-spacing-h3); }
+.text-title     { font-size: var(--font-size-title); line-height: var(--line-height-title); font-weight: var(--font-weight-title); }
+.text-subtitle  { font-size: var(--font-size-subtitle); line-height: var(--line-height-subtitle); font-weight: var(--font-weight-subtitle); }
+.text-body-lg   { font-size: var(--font-size-body-lg); line-height: var(--line-height-body-lg); font-weight: var(--font-weight-body-lg); }
+.text-body      { font-size: var(--font-size-body); line-height: var(--line-height-body); font-weight: var(--font-weight-body); }
+.text-body-sm   { font-size: var(--font-size-body-sm); line-height: var(--line-height-body-sm); font-weight: var(--font-weight-body-sm); }
+.text-caption   { font-size: var(--font-size-caption); line-height: var(--line-height-caption); font-weight: var(--font-weight-caption); letter-spacing: var(--letter-spacing-caption); }
+.text-label     { font-size: var(--font-size-label); line-height: var(--line-height-label); font-weight: var(--font-weight-label); letter-spacing: var(--letter-spacing-label); text-transform: uppercase; }
+.text-button    { font-size: var(--font-size-button); line-height: var(--line-height-button); font-weight: var(--font-weight-button); }
+.text-overline  { font-size: var(--font-size-overline); line-height: var(--line-height-overline); font-weight: var(--font-weight-overline); letter-spacing: var(--letter-spacing-overline); text-transform: uppercase; }
+.text-mono-data { font-family: var(--font-family-mono); font-size: var(--font-size-mono-data); line-height: var(--line-height-mono-data); }
+
+/* Coluna de leitura longa — artigos/blog (OBSERVED: ADR-SYSTEM.md, max-width 65-75ch). */
+.prose {
+  max-width: 70ch;
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+}
+.prose h2 { font-size: var(--font-size-h3); line-height: var(--line-height-h3); font-weight: var(--font-weight-h3); scroll-margin-top: var(--space-8); }
+.prose blockquote {
+  border-left: var(--border-width-thin) solid var(--semantic-action-secondary);
+  padding-left: var(--space-4);
+  margin-left: 0;
+}

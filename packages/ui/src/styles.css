@@ -1,0 +1,196 @@
+/*
+ * @executar/ui component styles. Consumes only CSS custom properties from
+ * @executar/design-tokens/theme.css — never a raw hex/px. Load theme.css
+ * (or variables.css if you compose your own semantic layer) BEFORE this file.
+ */
+@import "@executar/design-tokens/theme.css";
+
+/* ---------- Button (design-system/COMPONENT-SPEC.md#button) ---------- */
+
+.ex-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-button);
+  line-height: var(--line-height-button);
+  font-weight: var(--font-weight-button);
+  border: var(--border-width-thin) solid transparent;
+  border-radius: var(--radius-pill);
+  padding-inline: var(--space-6);
+  height: 48px;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-micro) var(--motion-easing-out),
+    border-color var(--motion-duration-micro) var(--motion-easing-out),
+    transform var(--motion-duration-micro) var(--motion-easing-out);
+}
+@media (max-width: 767px) {
+  .ex-button { height: 52px; }
+}
+
+.ex-button--primary {
+  background: var(--semantic-action-primary);
+  color: var(--semantic-action-primary_text);
+}
+.ex-button--primary:hover:not(:disabled) { background: var(--semantic-action-primary_hover); }
+
+.ex-button--secondary {
+  background: transparent;
+  border-color: var(--semantic-action-secondary);
+  color: var(--semantic-action-secondary);
+}
+.ex-button--secondary:hover:not(:disabled) { background: var(--color-azure-2); }
+
+.ex-button--tertiary {
+  background: transparent;
+  border-color: transparent;
+  color: var(--semantic-text-link);
+  padding-inline: var(--space-2);
+  height: auto;
+}
+.ex-button--tertiary:hover:not(:disabled) { text-decoration: underline; }
+
+.ex-button:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.ex-button[data-state="loading"] {
+  cursor: progress;
+  opacity: var(--opacity-disabled);
+}
+
+/* ---------- IconButton ---------- */
+
+.ex-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-full);
+  border: var(--border-width-thin) solid transparent;
+  background: transparent;
+  color: var(--semantic-text-secondary);
+  cursor: pointer;
+  transition: background-color var(--motion-duration-micro) var(--motion-easing-out);
+}
+.ex-icon-button:hover:not(:disabled) { background: var(--color-neutral-3); }
+.ex-icon-button:disabled { cursor: not-allowed; opacity: var(--opacity-disabled); }
+
+/* ---------- Badge / CategoryPill ---------- */
+
+.ex-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-label);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  padding-inline: var(--space-3);
+  height: 24px;
+  border: var(--border-width-thin) solid var(--semantic-border-default);
+  color: var(--semantic-text-secondary);
+  background: transparent;
+  transition: background-color var(--motion-duration-micro) var(--motion-easing-out),
+    border-color var(--motion-duration-micro) var(--motion-easing-out);
+}
+.ex-badge[data-active="true"] {
+  background: var(--semantic-action-primary);
+  border-color: var(--semantic-action-primary);
+  color: var(--semantic-action-primary_text);
+}
+.ex-badge[data-active="false"]:hover { border-color: var(--semantic-action-primary); }
+
+/* ---------- Card (design-system/COMPONENT-SPEC.md#card) ---------- */
+
+.ex-card {
+  display: block; /* Card can render as <a> (href set) or <div> — never rely on the UA default (inline for <a>, block for <div>), or the anchor variant overflows its own border. Caught by a Storybook screenshot, not by the unit tests. */
+  background: var(--semantic-background-surface);
+  border: var(--border-width-thin) solid var(--semantic-border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+.ex-card--interactive {
+  cursor: pointer;
+  transition: box-shadow var(--motion-duration-micro) var(--motion-easing-out),
+    transform var(--motion-duration-micro) var(--motion-easing-out);
+}
+.ex-card--interactive:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ---------- Tabs ---------- */
+
+.ex-tabs {
+  display: flex;
+  gap: var(--space-6);
+  border-bottom: var(--border-width-thin) solid var(--semantic-border-default);
+}
+.ex-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding-block: var(--space-3);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-body-sm);
+  color: var(--semantic-text-secondary);
+  cursor: pointer;
+}
+.ex-tab[aria-selected="true"] {
+  color: var(--semantic-text-primary);
+  border-bottom-color: var(--semantic-action-primary);
+  font-weight: var(--font-weight-button);
+}
+
+/* ---------- Callout (design-system/components/callout-protocol.md) ---------- */
+
+.ex-callout {
+  display: flex;
+  gap: var(--space-3);
+  border-radius: var(--radius-md);
+  border: var(--border-width-thin) solid var(--ex-callout-border, var(--semantic-border-default));
+  background: var(--ex-callout-background, var(--semantic-background-canvas));
+  color: var(--ex-callout-foreground, var(--semantic-text-primary));
+  padding: var(--space-4);
+}
+.ex-callout__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--ex-callout-icon-color, currentColor);
+}
+.ex-callout__title {
+  font-weight: var(--font-weight-title);
+  margin-bottom: var(--space-1);
+}
+.ex-callout__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- Typography primitives ---------- */
+
+.ex-text,
+.ex-heading {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  color: var(--semantic-text-primary);
+}
+.ex-divider {
+  border: none;
+  border-top: var(--border-width-thin) solid var(--semantic-border-subtle);
+  margin: 0;
+}

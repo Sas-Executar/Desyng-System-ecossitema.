@@ -1,0 +1,45 @@
+/*
+ * layout.css — primitivas de grid/container derivadas de RESPONSIVE-SPEC.md.
+ * Grid base 8px (OBSERVED: ADR-SYSTEM.md SPEC-LAYOUT-001); breakpoints e
+ * larguras de container NORMALIZED (ver TRACEABILITY.md).
+ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container { padding-inline: var(--space-6); }
+}
+@media (min-width: 1024px) {
+  .container { padding-inline: var(--space-8); }
+}
+
+.container--reading {
+  max-width: var(--container-reading);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gutter-mobile);
+  grid-template-columns: repeat(var(--grid-columns-mobile), minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(var(--grid-columns-tablet), minmax(0, 1fr)); gap: var(--grid-gutter-desktop); }
+}
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(var(--grid-columns-desktop), minmax(0, 1fr)); }
+}
+
+.stack > * + * {
+  margin-top: var(--space-4);
+}
+
+/* Densidade de layout — DS-FORM-001-LAY-007. Aplicar no container de página. */
+[data-density="comfortable"] { --density-unit: var(--space-4); }
+[data-density="compact"]     { --density-unit: var(--space-2); }
+[data-density="expanded"]    { --density-unit: var(--space-6); }

@@ -39,3 +39,14 @@ Versionamento semântico recomendado (`GOV-002`, `00_GOVERNANCE/DS-FORM-001_RESP
 - `color.semantic.text.secondary` falhava AA normal-text (3.90-4.22:1, `neutral.10`) — remapeado para `neutral.11` (5.54-5.99:1).
 - `color.semantic.text.muted` falhava até o limiar de large-text no canvas (2.80:1, `neutral.9`) — remapeado para `neutral.10` (3.90-4.22:1, passa large-text, permanece restrito a texto ≥18px/400 ou ≥14px/600). Ver `ACCESSIBILITY.md` para a tabela completa.
 - `design-system/tokens/*` ressincronizado com os valores corrigidos.
+
+## [0.3.0] — Fase 2: `packages/callout-protocol` e `packages/ui`
+
+**Adicionado**
+- `packages/callout-protocol`: `CalloutNode` (Zod) e `CALLOUT_REGISTRY` portados de `ADR-001` para código real; 28 testes.
+- `packages/ui`: biblioteca de componentes React — `Button`, `IconButton`, `Badge`/`CategoryPill`, `Card`, `Tabs`, `Callout`, `Text`/`Heading`/`Divider`; 35 testes (Vitest + Testing Library); Storybook configurado e verificado visualmente via screenshot Chromium contra `qa/visual-checklist.md`. Ver `component-inventory.md` para o status atualizado por componente.
+- `packages/design-tokens`: passa a distribuir também `styles/{reset,typography,layout,utilities}.css` (antes só existiam em `design-system/styles/`), para que `packages/ui` e futuras apps não precisem importar da pasta de documentação.
+
+**Corrigido (achados pela suíte de testes/verificação visual, não por revisão manual)**
+- `CalloutNodeSchema`: `body: z.unknown()` aceitava `undefined` silenciosamente — um nó sem `body` passava a validação. Corrigido com um `.refine()` exigindo presença.
+- `.ex-card` (packages/ui) não declarava `display` — ao renderizar como `<a>` (variante `href`, futuro `PostCard`), ficava `inline` (padrão do navegador) e o conteúdo transbordava da borda. Só apareceu no screenshot do Storybook, não nos testes unitários (jsdom não aplica CSS externo). Corrigido com `display: block` explícito.

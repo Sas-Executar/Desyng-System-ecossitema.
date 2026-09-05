@@ -14,6 +14,10 @@
     "./design-tokens.json": "./src/design-tokens.json",
     "./variables.css": "./dist/variables.css",
     "./theme.css": "./dist/theme.css",
+    "./styles/reset.css": "./dist/styles/reset.css",
+    "./styles/typography.css": "./dist/styles/typography.css",
+    "./styles/layout.css": "./dist/styles/layout.css",
+    "./styles/utilities.css": "./dist/styles/utilities.css",
     "./tokens.native": {
       "types": "./dist/tokens.native.d.ts",
       "import": "./dist/tokens.native.js"

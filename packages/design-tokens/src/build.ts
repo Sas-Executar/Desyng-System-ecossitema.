@@ -8,7 +8,7 @@
  * This replaces the one-off Python scripts used to produce the Phase 1
  * design-system/tokens/* snapshot with a real, repeatable, testable build.
  */
-import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync, readdirSync, copyFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
@@ -17,6 +17,8 @@ import type { DesignTokens, TokenValue } from "./types.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SRC = join(__dirname, "design-tokens.json");
 const DIST = join(__dirname, "..", "dist");
+const STYLES_SRC = join(__dirname, "styles");
+const STYLES_DIST = join(DIST, "styles");
 
 function loadTokens(): DesignTokens {
   return JSON.parse(readFileSync(SRC, "utf-8"));
@@ -219,6 +221,15 @@ function main() {
   writeFileSync(join(DIST, "tokens.native.ts"), buildTokensNativeTs(tokens));
   writeFileSync(join(DIST, "design-tokens.yaml"), yaml.dump(tokens, { noRefs: true, lineWidth: 100 }));
   writeFileSync(join(DIST, "design-tokens.json"), JSON.stringify(tokens, null, 2));
+
+  // Static, hand-authored stylesheets (reset/typography/layout/utilities) —
+  // copied verbatim from design-system/styles/, not generated from tokens,
+  // but shipped from this package so apps don't need to reach into
+  // design-system/ (the documentation snapshot) at runtime.
+  mkdirSync(STYLES_DIST, { recursive: true });
+  for (const file of readdirSync(STYLES_SRC)) {
+    copyFileSync(join(STYLES_SRC, file), join(STYLES_DIST, file));
+  }
 
   // index.js/.d.ts (the typed runtime API, including contrast.ts) is compiled
   // separately by `tsc -p tsconfig.build.json` — see the "build" script in
