@@ -70,8 +70,8 @@ Ledger exigido por `Prompt.md §16`: toda decisão de token deste package é cla
 | `color.semantic.background.surface` | `{color.palette.neutral.1}` | ALIAS | aliases a primitive above |
 | `color.semantic.background.elevated` | `{color.palette.neutral.1}` | ALIAS | aliases a primitive above |
 | `color.semantic.text.primary` | `{color.palette.neutral.12}` | ALIAS | aliases a primitive above |
-| `color.semantic.text.secondary` | `{color.palette.neutral.10}` | ALIAS | aliases a primitive above |
-| `color.semantic.text.muted` | `{color.palette.neutral.9}` | ALIAS | aliases a primitive above |
+| `color.semantic.text.secondary` | `{color.palette.neutral.11}` | ALIAS | aliases a primitive above |
+| `color.semantic.text.muted` | `{color.palette.neutral.10}` | ALIAS | aliases a primitive above |
 | `color.semantic.text.on_brand` | `{color.palette.neutral.1}` | ALIAS | aliases a primitive above |
 | `color.semantic.text.link` | `{color.palette.azure.11}` | ALIAS | aliases a primitive above |
 | `color.semantic.border.subtle` | `{color.palette.neutral.4}` | ALIAS | aliases a primitive above |

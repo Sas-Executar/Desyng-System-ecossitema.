@@ -35,6 +35,17 @@ focus:         visible = true (nunca suprimido — ver styles/reset.css)
 
 **Ação recomendada (RECOMMENDED, não aplicada automaticamente — decisão de UI):** para o texto do botão primário/secundário sólido, considerar usar `green.10`/`azure.10` (levemente mais escuros) como fundo em vez do passo 9 puro quando o label for menor que 18px, ou manter o peso 600 exigido por `SPEC-BUTTON-001` ("label: IBM Plex Sans Medium") e validar com ferramenta de contraste antes do lançamento — isto não foi testado neste handoff (ver `qa/implementation-checklist.md`).
 
+## Correção adicional (Fase 2 — encontrada pelo teste automatizado, não pela auditoria manual)
+
+Ao transformar esta auditoria num teste real (`packages/design-tokens/src/contrast.test.ts`), o teste pegou um segundo problema que a Fase 1 não tinha coberto: **`text.secondary` e `text.muted` também falhavam.**
+
+| Token | Valor original (Fase 1) | Contraste original | Valor corrigido (Fase 2) | Contraste corrigido |
+|---|---|---|---|---|
+| `text.secondary` | `neutral.10` `#7C7B7B` | 3.90:1 (canvas) / 4.22:1 (surface) — ❌ falha 4.5:1 | `neutral.11` `#646363` | **5.54:1 / 5.99:1** — ✅ passa AA normal |
+| `text.muted` | `neutral.9` `#959494` | 2.80:1 (canvas) / 3.03:1 (surface) — ❌ falha até 3:1 no canvas | `neutral.10` `#7C7B7B` | **3.90:1 / 4.22:1** — ✅ passa AA *large-text* (≥3:1), ainda não passa AA normal (4.5:1) |
+
+`text.secondary` agora é seguro para qualquer tamanho de texto. `text.muted` ficou restrito: só pode ser usado em texto ≥18px/peso 400 ou ≥14px/peso 600 (limiar de "large text" do WCAG), em divisores decorativos ou em ícones desabilitados — **nunca em corpo de texto ou `caption` (12-14px)**. Isso está documentado como `$description` no próprio token (`packages/design-tokens/src/design-tokens.json`) e coberto por teste (`contrast.test.ts`, describe `"color.semantic.text.* — every alias is intentional, not an accident"`).
+
 ## Nunca depender só da cor
 
 Todo estado (`success/warning/error/info`) deve carregar ícone + texto, nunca cor isolada (OBSERVED, `SPEC-ACCESSIBILITY-001` + reforçado pelo registry de `components/callout-protocol.md`). Tabs ativas usam indicador de posição + cor, nunca cor isolada.
@@ -64,6 +75,7 @@ Não testado nesta entrega (nenhuma implementação de código existe ainda). Re
 | Problema | Onde | Correção |
 |---|---|---|
 | Green/Azure raw falham contraste como texto | Paleta base | Alias de texto aponta para passo 11, não 9 (ver DESIGN-SPEC.md) |
+| `text.secondary`/`text.muted` também falhavam AA | `color.semantic.text.*` | Remapeados para `neutral.11`/`neutral.10` na Fase 2, `muted` restrito a large-text (ver acima) — pego por teste automatizado, não pela revisão manual da Fase 1 |
 | Texto de botão sólido em telas pequenas | Button primary/secondary | Peso 600+ obrigatório; validar contraste antes do lançamento (RECOMMENDED, não testado) |
 | Foco pode ser suprimido acidentalmente | Qualquer componente interativo | `reset.css` define `:focus-visible` global; nunca sobrescrever com `outline: none` isolado |
 | Estado codificado só por cor | Badges, Tabs, Callouts | Ícone/indicador de posição obrigatório (ver callout-protocol.md) |

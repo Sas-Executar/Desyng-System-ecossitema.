@@ -1,13 +1,13 @@
-/* AUTO-GENERATED semantic theme layer. Consome variables.css. */
-@import url('./variables.css');
+/* AUTO-GENERATED semantic theme layer. Consumes variables.css. */
+@import "./variables.css";
 
 :root, [data-theme='light'] {
   --semantic-background-canvas: var(--color-neutral-2);
   --semantic-background-surface: var(--color-neutral-1);
   --semantic-background-elevated: var(--color-neutral-1);
   --semantic-text-primary: var(--color-neutral-12);
-  --semantic-text-secondary: var(--color-neutral-10);
-  --semantic-text-muted: var(--color-neutral-9);
+  --semantic-text-secondary: var(--color-neutral-11);
+  --semantic-text-muted: var(--color-neutral-10);
   --semantic-text-on_brand: var(--color-neutral-1);
   --semantic-text-link: var(--color-azure-11);
   --semantic-border-subtle: var(--color-neutral-4);
@@ -30,7 +30,7 @@
   --semantic-focus-ring: var(--color-azure-8);
 }
 
-/* Dark theme: alias remap only (paridade a validar em auditoria de acessibilidade — ver ACCESSIBILITY.md). */
+/* Dark theme: alias remap only — not yet accessibility-audited, see ACCESSIBILITY.md. */
 [data-theme='dark'] {
   --semantic-background-canvas: var(--color-neutral-12);
   --semantic-background-surface: var(--color-neutral-11);
@@ -52,7 +52,7 @@
   --semantic-state-error_text: var(--color-error-7);
 }
 
-/* High-contrast theme (WCAG AAA-leaning): pares reforcados. RECOMMENDED — nao auditado ainda. */
+/* High-contrast theme (WCAG AAA-leaning): reinforced pairs. RECOMMENDED — not audited yet. */
 [data-theme='high-contrast'] {
   --semantic-text-primary: var(--color-neutral-12);
   --semantic-background-canvas: var(--color-neutral-1);

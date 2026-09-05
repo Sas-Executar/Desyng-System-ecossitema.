@@ -27,3 +27,15 @@ Versionamento semântico recomendado (`GOV-002`, `00_GOVERNANCE/DS-FORM-001_RESP
 - Estratégia de marca, naming formal, identidade verbal e governança organizacional (aprovadores, SLA) permanecem pendentes de decisão humana.
 - Nenhuma especificação de produção gráfica/impressão (PRN) foi criada — nenhum canal de impressão foi confirmado para a primeira versão.
 - Nenhum teste automatizado, visual regression ou Storybook foi criado.
+
+## [0.2.0] — Fase 2: `packages/design-tokens` em código
+
+**Adicionado**
+- Monorepo pnpm real (`pnpm-workspace.yaml`, `package.json` raiz, `tsconfig.base.json`).
+- `packages/design-tokens`: `src/design-tokens.json` passa a ser a fonte canônica (antes era `design-system/tokens/design-tokens.json`, que agora é um espelho gerado a partir do pacote); `src/build.ts` substitui os scripts Python descartáveis da Fase 1 por um gerador TypeScript real e repetível.
+- `packages/design-tokens/src/contrast.test.ts` (Vitest): transforma a auditoria manual de `ACCESSIBILITY.md` num gate automatizado — 12 testes, todos passando.
+
+**Corrigido (achado pelo teste automatizado, não pela revisão manual da Fase 1)**
+- `color.semantic.text.secondary` falhava AA normal-text (3.90-4.22:1, `neutral.10`) — remapeado para `neutral.11` (5.54-5.99:1).
+- `color.semantic.text.muted` falhava até o limiar de large-text no canvas (2.80:1, `neutral.9`) — remapeado para `neutral.10` (3.90-4.22:1, passa large-text, permanece restrito a texto ≥18px/400 ou ≥14px/600). Ver `ACCESSIBILITY.md` para a tabela completa.
+- `design-system/tokens/*` ressincronizado com os valores corrigidos.

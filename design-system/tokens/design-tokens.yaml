@@ -383,10 +383,23 @@ color:
         $value: '{color.palette.neutral.12}'
       secondary:
         $type: color
-        $value: '{color.palette.neutral.10}'
+        $value: '{color.palette.neutral.11}'
+        $description: >-
+          Passes WCAG AA normal text (5.54:1 on canvas, 5.99:1 on surface). Corrected during Phase 2
+          build: neutral.10 (previous value) only reached 3.90-4.22:1 and failed the 4.5:1
+          normal-text minimum — see packages/design-tokens/src/contrast.test.ts.
+        $extensions:
+          desyng.source: NORMALIZED:accessibility-fix(confidence:0.8)
       muted:
         $type: color
-        $value: '{color.palette.neutral.9}'
+        $value: '{color.palette.neutral.10}'
+        $description: >-
+          Only reaches 3.90-4.22:1 — meets the 3:1 large-text/non-text minimum, NOT the 4.5:1
+          normal-text minimum. Restrict to text >=18px/400 or >=14px/600, decorative dividers, or
+          disabled-state icons. Never use for body or caption-sized text (12-14px). Corrected during
+          Phase 2 build from neutral.9, which failed even the 3:1 threshold on canvas (2.80:1).
+        $extensions:
+          desyng.source: NORMALIZED:accessibility-fix(confidence:0.8)
       on_brand:
         $type: color
         $value: '{color.palette.neutral.1}'
@@ -456,19 +469,19 @@ font:
     sans:
       $type: fontFamily
       $value:
-      - IBM Plex Sans
-      - -apple-system
-      - Segoe UI
-      - sans-serif
+        - IBM Plex Sans
+        - '-apple-system'
+        - Segoe UI
+        - sans-serif
       $extensions:
         desyng.source: OBSERVED:ADR-SYSTEM.md
     mono:
       $type: fontFamily
       $value:
-      - IBM Plex Mono
-      - SFMono-Regular
-      - Consolas
-      - monospace
+        - IBM Plex Mono
+        - SFMono-Regular
+        - Consolas
+        - monospace
       $extensions:
         desyng.source: OBSERVED:ADR-SYSTEM.md
 fontSize:
@@ -631,13 +644,13 @@ fontWeight:
 letterSpacing:
   display:
     $type: dimension
-    $value: -0.02em
+    $value: '-0.02em'
   h1:
     $type: dimension
-    $value: -0.01em
+    $value: '-0.01em'
   h2:
     $type: dimension
-    $value: -0.01em
+    $value: '-0.01em'
   h3:
     $type: dimension
     $value: 0em
@@ -818,11 +831,6 @@ space:
     $value: 0px
     $extensions:
       desyng.source: OBSERVED
-  '0.5':
-    $type: dimension
-    $value: 2px
-    $extensions:
-      desyng.source: RECOMMENDED(fills Tailwind-compatible scale)
   '1':
     $type: dimension
     $value: 4px
@@ -871,6 +879,11 @@ space:
   '32':
     $type: dimension
     $value: 128px
+    $extensions:
+      desyng.source: RECOMMENDED(fills Tailwind-compatible scale)
+  '0.5':
+    $type: dimension
+    $value: 2px
     $extensions:
       desyng.source: RECOMMENDED(fills Tailwind-compatible scale)
 radius:
@@ -1033,21 +1046,21 @@ motion:
     out:
       $type: cubicBezier
       $value:
-      - 0
-      - 0
-      - 0.2
-      - 1
+        - 0
+        - 0
+        - 0.2
+        - 1
       $extensions:
         desyng.source: OBSERVED:ADR-SYSTEM.md(ease-out)
   allowed_properties:
-  - opacity
-  - transform:translate
-  - transform:scale-subtle
-  - layer-depth(shadow/elevation)
+    - opacity
+    - transform:translate
+    - transform:scale-subtle
+    - layer-depth(shadow/elevation)
   forbidden_properties:
-  - bouncing
-  - excessive-parallax
-  - decorative-spin
+    - bouncing
+    - excessive-parallax
+    - decorative-spin
 zIndex:
   base:
     $type: number

@@ -1,0 +1,37 @@
+{
+  "name": "@executar/design-tokens",
+  "version": "0.1.0",
+  "description": "Canonical design tokens for the EXECUTAR ecosystem (Desyng System). SOT: references/source-docs/ADR-SYSTEM.md.",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./design-tokens.json": "./src/design-tokens.json",
+    "./variables.css": "./dist/variables.css",
+    "./theme.css": "./dist/theme.css",
+    "./tokens.native": {
+      "types": "./dist/tokens.native.d.ts",
+      "import": "./dist/tokens.native.js"
+    },
+    "./design-tokens.yaml": "./dist/design-tokens.yaml"
+  },
+  "files": ["dist", "src/design-tokens.json"],
+  "scripts": {
+    "build": "tsx src/build.ts && tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.8",
+    "js-yaml": "^4.1.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.2"
+  }
+}

@@ -1,0 +1,38 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+dist/
+build/
+.astro/
+.next/
+.expo/
+.expo-shared/
+storybook-static/
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+
+# test/coverage
+coverage/
+
+# Payload
+apps/admin/media/
+
+# misc
+*.tsbuildinfo
