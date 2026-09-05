@@ -1,0 +1,27 @@
+flowchart TD
+    U[Operador Solo] --> UI[EXECUTAR Operations Console<br/>/admin/executar]
+    UI --> PA[Payload Admin<br/>Custom Views + Components]
+    PA --> API[Payload Local / REST / GraphQL API]
+    API --> DB[(PostgreSQL)]
+    API --> C[Collections]
+    C --> H[Hooks]
+    C --> J[Jobs / Workflows]
+    J --> W[Webhooks / APIs]
+    H --> W
+
+    C --> OBJ[Object Storage]
+    W --> CANVA[Canva]
+    W --> MET[Metricool]
+    W --> HUB[HubSpot]
+    W --> ORCH[n8n / Make]
+    W --> EXT[Outros canais]
+
+    CANVA --> R[external_id / URL / status]
+    MET --> R
+    HUB --> R
+    ORCH --> R
+    EXT --> R
+    R --> API
+
+    DB --> AN[Analytics / KPIs]
+    AN --> UI

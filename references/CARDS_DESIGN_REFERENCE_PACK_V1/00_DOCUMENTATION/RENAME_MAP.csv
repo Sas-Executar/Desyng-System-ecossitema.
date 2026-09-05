@@ -1,0 +1,22 @@
+﻿id,arquivo_original,arquivo_padronizado,caminho_relativo
+DSREF-CMP-001,IMG_0498.jpg,DSREF-CMP-001__change-request-form-card.jpg,02_COMPONENTS/DSREF-CMP-001__change-request-form-card.jpg
+DSREF-CMP-002,"Componetes-infografico,web.JPG",DSREF-CMP-002__process-steps-content-section.jpg,02_COMPONENTS/DSREF-CMP-002__process-steps-content-section.jpg
+DSREF-CRD-001,Blog cards.JPG,DSREF-CRD-001__delivery-tracker-card.jpg,03_CARDS/DSREF-CRD-001__delivery-tracker-card.jpg
+DSREF-CRD-002,Blog cardss.JPG,DSREF-CRD-002__isometric-creator-card.jpg,03_CARDS/DSREF-CRD-002__isometric-creator-card.jpg
+DSREF-CRD-003,Data cards.JPG,DSREF-CRD-003__analytics-data-card.jpg,03_CARDS/DSREF-CRD-003__analytics-data-card.jpg
+DSREF-CRD-004,IMG_0876.JPG,DSREF-CRD-004__automated-workflow-feature-card.jpg,03_CARDS/DSREF-CRD-004__automated-workflow-feature-card.jpg
+DSREF-CRD-005,IMG_0877.JPG,DSREF-CRD-005__trend-tracking-feature-card.jpg,03_CARDS/DSREF-CRD-005__trend-tracking-feature-card.jpg
+DSREF-CRD-006,IMG_0878.JPG,DSREF-CRD-006__export-share-feature-card.jpg,03_CARDS/DSREF-CRD-006__export-share-feature-card.jpg
+DSREF-CRD-007,IMG_0881.JPG,DSREF-CRD-007__community-guide-promo-card.jpg,03_CARDS/DSREF-CRD-007__community-guide-promo-card.jpg
+DSREF-FND-001,Fontes e Tipografia.PNG,DSREF-FND-001__dark-ui-typography-reference.png,01_FOUNDATIONS/DSREF-FND-001__dark-ui-typography-reference.png
+DSREF-FND-002,Icones .JPG,DSREF-FND-002__interface-icon-grid.jpg,01_FOUNDATIONS/DSREF-FND-002__interface-icon-grid.jpg
+DSREF-FND-003,Componetes e botoes.JPG,DSREF-FND-003__action-icon-set-dark.jpg,01_FOUNDATIONS/DSREF-FND-003__action-icon-set-dark.jpg
+DSREF-LAY-001,"Widge,layout,blog,web.JPG",DSREF-LAY-001__modular-widget-card-layout.jpg,04_LAYOUTS_WIREFRAMES/DSREF-LAY-001__modular-widget-card-layout.jpg
+DSREF-LAY-002,Wireframe website..JPG,DSREF-LAY-002__editorial-landing-page-wireframe.jpg,04_LAYOUTS_WIREFRAMES/DSREF-LAY-002__editorial-landing-page-wireframe.jpg
+DSREF-STA-001,IMG_0883.JPG,DSREF-STA-001__saved-actions-empty-state.jpg,05_STATES_FEEDBACK/DSREF-STA-001__saved-actions-empty-state.jpg
+DSREF-STA-002,IMG_0884.JPG,DSREF-STA-002__meetings-empty-state.jpg,05_STATES_FEEDBACK/DSREF-STA-002__meetings-empty-state.jpg
+DSREF-STA-003,IMG_0885.JPG,DSREF-STA-003__cleanup-complete-success-state.jpg,05_STATES_FEEDBACK/DSREF-STA-003__cleanup-complete-success-state.jpg
+DSREF-STA-004,"angulos,imagens e graficas..JPG",DSREF-STA-004__no-data-empty-state.jpg,05_STATES_FEEDBACK/DSREF-STA-004__no-data-empty-state.jpg
+DSREF-VIS-001,"Visuais,imagens,aut0,enginner,.JPG",DSREF-VIS-001__automation-process-diagrams.jpg,06_VISUAL_LANGUAGE/DSREF-VIS-001__automation-process-diagrams.jpg
+DSREF-VIS-002,"Visual,imagens graficas.JPG",DSREF-VIS-002__isometric-system-modules.jpg,06_VISUAL_LANGUAGE/DSREF-VIS-002__isometric-system-modules.jpg
+DSREF-VIS-003,"Visual,imagens,infografic..JPG",DSREF-VIS-003__automation-infographic-reference.jpg,06_VISUAL_LANGUAGE/DSREF-VIS-003__automation-infographic-reference.jpg

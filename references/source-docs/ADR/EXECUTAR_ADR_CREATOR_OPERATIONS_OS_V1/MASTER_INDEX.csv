@@ -1,0 +1,6 @@
+﻿order,file,purpose,status,type
+01,ADR-001_EXECUTAR_CREATOR_OPERATIONS_OS.md,Architecture Decision Record principal,approved,architecture
+02,ARCHITECTURE_TARGET.mmd,Diagrama Mermaid da arquitetura alvo,ready,architecture
+03,DATA_MODEL_V1.yaml,"Modelo de Collections, estados, filas e contratos",ready,spec
+04,IMPLEMENTATION_CHECKLIST.md,Checklist sequencial de implementação e aceite,ready,runbook
+05,README.md,Entrada e instruções do pacote,ready,index

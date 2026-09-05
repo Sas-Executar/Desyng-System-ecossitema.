@@ -1,0 +1,92 @@
+version: "1.0"
+system: EXECUTAR_CREATOR_OPERATIONS_OS
+source_of_truth:
+  operational: payload_postgresql
+  files: object_storage
+  crm: hubspot
+  social_distribution: metricool
+
+entrypoint:
+  route: /admin/executar
+  ui: payload_custom_view
+
+collections:
+  problems:
+    key: problem_id
+    relations: [content]
+  content:
+    key: content_id
+    relations: [problems, derivatives, campaigns]
+  derivatives:
+    key: derivative_id
+    relations: [content, assets, publications]
+  assets:
+    key: asset_id
+    relations: [derivatives]
+  publications:
+    key: publication_id
+    relations: [derivatives, channels, ctas, metrics, automation_runs]
+  channels:
+    key: channel_id
+    relations: [publications]
+  campaigns:
+    key: campaign_id
+    relations: [content, publications]
+  ctas:
+    key: cta_id
+    relations: [publications, products]
+  products:
+    key: product_id
+    relations: [ctas]
+  metrics:
+    key: metric_id
+    relations: [publications]
+  automation_runs:
+    key: run_id
+    relations: [publications]
+  integration_accounts:
+    key: integration_id
+
+pipeline:
+  normal:
+    - CAPTURED
+    - TRIAGED
+    - PRIORITIZED
+    - RESEARCH
+    - DRAFT
+    - PRODUCTION
+    - QA
+    - READY
+    - SCHEDULED
+    - PUBLISHED
+    - MEASURED
+    - RECYCLE
+    - ARCHIVED
+  exception:
+    - BLOCKED
+    - FAILED
+    - CANCELLED
+
+queues:
+  - publishing
+  - analytics
+  - crm
+  - media
+  - notifications
+  - maintenance
+
+integration_contract:
+  outbound:
+    fields:
+      - entity_id
+      - event_type
+      - timestamp
+      - idempotency_key
+      - payload
+  inbound:
+    fields:
+      - external_id
+      - status
+      - url
+      - metrics
+      - received_at

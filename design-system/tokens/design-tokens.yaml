@@ -1,0 +1,1086 @@
+$description: 'EXECUTAR / Desyng System — design tokens. SOT: ADR-SYSTEM.md (Accepted).'
+color:
+  palette:
+    green:
+      '1':
+        $type: color
+        $value: '#FCFDFC'
+        $description: green step 1
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '2':
+        $type: color
+        $value: '#F3FAF6'
+        $description: green step 2
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '3':
+        $type: color
+        $value: '#E4F6ED'
+        $description: green step 3
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '4':
+        $type: color
+        $value: '#CFF4E2'
+        $description: green step 4
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '5':
+        $type: color
+        $value: '#B4F4D5'
+        $description: green step 5
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '6':
+        $type: color
+        $value: '#8BF6C2'
+        $description: green step 6
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '7':
+        $type: color
+        $value: '#58FBAD'
+        $description: green step 7
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '8':
+        $type: color
+        $value: '#1FFF93'
+        $description: green step 8
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '9':
+        $type: color
+        $value: '#00BF63'
+        $description: green step 9
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md
+      '10':
+        $type: color
+        $value: '#008C49'
+        $description: green step 10
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '11':
+        $type: color
+        $value: '#007A45'
+        $description: green step 11
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md
+      '12':
+        $type: color
+        $value: '#064727'
+        $description: green step 12
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+    azure:
+      '1':
+        $type: color
+        $value: '#FCFCFD'
+        $description: azure step 1
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '2':
+        $type: color
+        $value: '#F3F6FA'
+        $description: azure step 2
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '3':
+        $type: color
+        $value: '#E4EDF6'
+        $description: azure step 3
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '4':
+        $type: color
+        $value: '#CFE2F4'
+        $description: azure step 4
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '5':
+        $type: color
+        $value: '#B4D5F4'
+        $description: azure step 5
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '6':
+        $type: color
+        $value: '#8BC2F6'
+        $description: azure step 6
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '7':
+        $type: color
+        $value: '#58ACFB'
+        $description: azure step 7
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '8':
+        $type: color
+        $value: '#1F93FF'
+        $description: azure step 8
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '9':
+        $type: color
+        $value: '#1F93FF'
+        $description: azure step 9
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md
+      '10':
+        $type: color
+        $value: '#007AEB'
+        $description: azure step 10
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '11':
+        $type: color
+        $value: '#0B6FD3'
+        $description: azure step 11
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md
+      '12':
+        $type: color
+        $value: '#062747'
+        $description: azure step 12
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+    neutral:
+      '1':
+        $type: color
+        $value: '#FFFFFF'
+        $description: neutral step 1
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md+Desing-System-notes.md
+      '2':
+        $type: color
+        $value: '#F6F6F6'
+        $description: neutral step 2
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md+Desing-System-notes.md
+      '3':
+        $type: color
+        $value: '#F0F0F0'
+        $description: neutral step 3
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '4':
+        $type: color
+        $value: '#EAEAEA'
+        $description: neutral step 4
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '5':
+        $type: color
+        $value: '#E4E4E4'
+        $description: neutral step 5
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '6':
+        $type: color
+        $value: '#DEDEDE'
+        $description: neutral step 6
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md+Desing-System-notes.md
+      '7':
+        $type: color
+        $value: '#C5C5C5'
+        $description: neutral step 7
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '8':
+        $type: color
+        $value: '#ADADAD'
+        $description: neutral step 8
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '9':
+        $type: color
+        $value: '#959494'
+        $description: neutral step 9
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '10':
+        $type: color
+        $value: '#7C7B7B'
+        $description: neutral step 10
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '11':
+        $type: color
+        $value: '#646363'
+        $description: neutral step 11
+        $extensions:
+          desyng.source: NORMALIZED:interpolated-ramp(confidence:0.55)
+      '12':
+        $type: color
+        $value: '#4B4A4A'
+        $description: neutral step 12
+        $extensions:
+          desyng.source: OBSERVED:ADR-SYSTEM.md+Desing-System-notes.md
+    warning:
+      '1':
+        $type: color
+        $value: '#FDFCFC'
+        $description: warning step 1
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '2':
+        $type: color
+        $value: '#F9F6F3'
+        $description: warning step 2
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '3':
+        $type: color
+        $value: '#F5EDE5'
+        $description: warning step 3
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '4':
+        $type: color
+        $value: '#F2E2D1'
+        $description: warning step 4
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '5':
+        $type: color
+        $value: '#F1D4B7'
+        $description: warning step 5
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '6':
+        $type: color
+        $value: '#F1C191'
+        $description: warning step 6
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '7':
+        $type: color
+        $value: '#F3AA60'
+        $description: warning step 7
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '8':
+        $type: color
+        $value: '#F48F29'
+        $description: warning step 8
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '9':
+        $type: color
+        $value: '#B25E09'
+        $description: warning step 9
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '10':
+        $type: color
+        $value: '#814407'
+        $description: warning step 10
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '11':
+        $type: color
+        $value: '#8C4D0D'
+        $description: warning step 11
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '12':
+        $type: color
+        $value: '#442609'
+        $description: warning step 12
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+    error:
+      '1':
+        $type: color
+        $value: '#FDFCFC'
+        $description: error step 1
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '2':
+        $type: color
+        $value: '#F8F4F4'
+        $description: error step 2
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '3':
+        $type: color
+        $value: '#F3E8E8'
+        $description: error step 3
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '4':
+        $type: color
+        $value: '#EDD6D6'
+        $description: error step 4
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '5':
+        $type: color
+        $value: '#E8BFBF'
+        $description: error step 5
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '6':
+        $type: color
+        $value: '#E29F9F'
+        $description: error step 6
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '7':
+        $type: color
+        $value: '#DD7676'
+        $description: error step 7
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '8':
+        $type: color
+        $value: '#D64848'
+        $description: error step 8
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '9':
+        $type: color
+        $value: '#C22C2C'
+        $description: error step 9
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '10':
+        $type: color
+        $value: '#982323'
+        $description: error step 10
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '11':
+        $type: color
+        $value: '#792020'
+        $description: error step 11
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+      '12':
+        $type: color
+        $value: '#3B1212'
+        $description: error step 12
+        $extensions:
+          desyng.source: ESTIMATED:new-family-not-in-source(confidence:0.4)
+  semantic:
+    background:
+      canvas:
+        $type: color
+        $value: '{color.palette.neutral.2}'
+      surface:
+        $type: color
+        $value: '{color.palette.neutral.1}'
+      elevated:
+        $type: color
+        $value: '{color.palette.neutral.1}'
+    text:
+      primary:
+        $type: color
+        $value: '{color.palette.neutral.12}'
+      secondary:
+        $type: color
+        $value: '{color.palette.neutral.10}'
+      muted:
+        $type: color
+        $value: '{color.palette.neutral.9}'
+      on_brand:
+        $type: color
+        $value: '{color.palette.neutral.1}'
+      link:
+        $type: color
+        $value: '{color.palette.azure.11}'
+    border:
+      subtle:
+        $type: color
+        $value: '{color.palette.neutral.4}'
+      default:
+        $type: color
+        $value: '{color.palette.neutral.6}'
+      strong:
+        $type: color
+        $value: '{color.palette.neutral.8}'
+      focus:
+        $type: color
+        $value: '{color.palette.azure.8}'
+    action:
+      primary:
+        $type: color
+        $value: '{color.palette.green.9}'
+      primary_hover:
+        $type: color
+        $value: '{color.palette.green.10}'
+      primary_text:
+        $type: color
+        $value: '{color.palette.neutral.1}'
+      secondary:
+        $type: color
+        $value: '{color.palette.azure.9}'
+      secondary_hover:
+        $type: color
+        $value: '{color.palette.azure.10}'
+    state:
+      success:
+        $type: color
+        $value: '{color.palette.green.9}'
+      success_text:
+        $type: color
+        $value: '{color.palette.green.11}'
+      info:
+        $type: color
+        $value: '{color.palette.azure.9}'
+      info_text:
+        $type: color
+        $value: '{color.palette.azure.11}'
+      warning:
+        $type: color
+        $value: '{color.palette.warning.9}'
+      warning_text:
+        $type: color
+        $value: '{color.palette.warning.11}'
+      error:
+        $type: color
+        $value: '{color.palette.error.9}'
+      error_text:
+        $type: color
+        $value: '{color.palette.error.11}'
+    focus:
+      ring:
+        $type: color
+        $value: '{color.palette.azure.8}'
+font:
+  family:
+    sans:
+      $type: fontFamily
+      $value:
+      - IBM Plex Sans
+      - -apple-system
+      - Segoe UI
+      - sans-serif
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md
+    mono:
+      $type: fontFamily
+      $value:
+      - IBM Plex Mono
+      - SFMono-Regular
+      - Consolas
+      - monospace
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md
+fontSize:
+  display:
+    $type: dimension
+    $value: 56px
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 48-64px range)
+  h1:
+    $type: dimension
+    $value: 44px
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 40-48px range)
+  h2:
+    $type: dimension
+    $value: 34px
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 32-36px range)
+  h3:
+    $type: dimension
+    $value: 26px
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 24-28px range)
+  title:
+    $type: dimension
+    $value: 20px
+    $extensions:
+      desyng.source: RECOMMENDED(fills gap between h3 and body-lg per Prompt.md role list)
+  subtitle:
+    $type: dimension
+    $value: 18px
+    $extensions:
+      desyng.source: RECOMMENDED
+  body-lg:
+    $type: dimension
+    $value: 18px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(leitura longa 17-18px/1.6-1.7/400)
+  body:
+    $type: dimension
+    $value: 16px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(Body 16px)
+  body-sm:
+    $type: dimension
+    $value: 14px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(Small 14px)
+  caption:
+    $type: dimension
+    $value: 12px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(Caption 12px)
+  label:
+    $type: dimension
+    $value: 13px
+    $extensions:
+      desyng.source: RECOMMENDED
+  button:
+    $type: dimension
+    $value: 15px
+    $extensions:
+      desyng.source: 'NORMALIZED(ADR-SYSTEM.md: "label: IBM Plex Sans Medium")'
+  overline:
+    $type: dimension
+    $value: 11px
+    $extensions:
+      desyng.source: RECOMMENDED
+  mono-data:
+    $type: dimension
+    $value: 14px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(IBM Plex Mono para IDs/metricas/dados)
+lineHeight:
+  display:
+    $type: dimension
+    $value: 64px
+  h1:
+    $type: dimension
+    $value: 52px
+  h2:
+    $type: dimension
+    $value: 42px
+  h3:
+    $type: dimension
+    $value: 34px
+  title:
+    $type: dimension
+    $value: 28px
+  subtitle:
+    $type: dimension
+    $value: 26px
+  body-lg:
+    $type: dimension
+    $value: 29px
+  body:
+    $type: dimension
+    $value: 26px
+  body-sm:
+    $type: dimension
+    $value: 22px
+  caption:
+    $type: dimension
+    $value: 18px
+  label:
+    $type: dimension
+    $value: 18px
+  button:
+    $type: dimension
+    $value: 20px
+  overline:
+    $type: dimension
+    $value: 16px
+  mono-data:
+    $type: dimension
+    $value: 20px
+fontWeight:
+  display:
+    $type: fontWeight
+    $value: 600
+  h1:
+    $type: fontWeight
+    $value: 600
+  h2:
+    $type: fontWeight
+    $value: 600
+  h3:
+    $type: fontWeight
+    $value: 600
+  title:
+    $type: fontWeight
+    $value: 600
+  subtitle:
+    $type: fontWeight
+    $value: 500
+  body-lg:
+    $type: fontWeight
+    $value: 400
+  body:
+    $type: fontWeight
+    $value: 400
+  body-sm:
+    $type: fontWeight
+    $value: 400
+  caption:
+    $type: fontWeight
+    $value: 400
+  label:
+    $type: fontWeight
+    $value: 500
+  button:
+    $type: fontWeight
+    $value: 500
+  overline:
+    $type: fontWeight
+    $value: 600
+  mono-data:
+    $type: fontWeight
+    $value: 400
+letterSpacing:
+  display:
+    $type: dimension
+    $value: -0.02em
+  h1:
+    $type: dimension
+    $value: -0.01em
+  h2:
+    $type: dimension
+    $value: -0.01em
+  h3:
+    $type: dimension
+    $value: 0em
+  title:
+    $type: dimension
+    $value: 0em
+  subtitle:
+    $type: dimension
+    $value: 0em
+  body-lg:
+    $type: dimension
+    $value: 0em
+  body:
+    $type: dimension
+    $value: 0em
+  body-sm:
+    $type: dimension
+    $value: 0em
+  caption:
+    $type: dimension
+    $value: 0.01em
+  label:
+    $type: dimension
+    $value: 0.02em
+  button:
+    $type: dimension
+    $value: 0em
+  overline:
+    $type: dimension
+    $value: 0.08em
+  mono-data:
+    $type: dimension
+    $value: 0em
+typography:
+  display:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.display}'
+      fontWeight: '{fontWeight.display}'
+      lineHeight: '{lineHeight.display}'
+      letterSpacing: '{letterSpacing.display}'
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 48-64px range)
+  h1:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.h1}'
+      fontWeight: '{fontWeight.h1}'
+      lineHeight: '{lineHeight.h1}'
+      letterSpacing: '{letterSpacing.h1}'
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 40-48px range)
+  h2:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.h2}'
+      fontWeight: '{fontWeight.h2}'
+      lineHeight: '{lineHeight.h2}'
+      letterSpacing: '{letterSpacing.h2}'
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 32-36px range)
+  h3:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.h3}'
+      fontWeight: '{fontWeight.h3}'
+      lineHeight: '{lineHeight.h3}'
+      letterSpacing: '{letterSpacing.h3}'
+    $extensions:
+      desyng.source: NORMALIZED(midpoint of OBSERVED 24-28px range)
+  title:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.title}'
+      fontWeight: '{fontWeight.title}'
+      lineHeight: '{lineHeight.title}'
+      letterSpacing: '{letterSpacing.title}'
+    $extensions:
+      desyng.source: RECOMMENDED(fills gap between h3 and body-lg per Prompt.md role list)
+  subtitle:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.subtitle}'
+      fontWeight: '{fontWeight.subtitle}'
+      lineHeight: '{lineHeight.subtitle}'
+      letterSpacing: '{letterSpacing.subtitle}'
+    $extensions:
+      desyng.source: RECOMMENDED
+  body-lg:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.body-lg}'
+      fontWeight: '{fontWeight.body-lg}'
+      lineHeight: '{lineHeight.body-lg}'
+      letterSpacing: '{letterSpacing.body-lg}'
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(leitura longa 17-18px/1.6-1.7/400)
+  body:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.body}'
+      fontWeight: '{fontWeight.body}'
+      lineHeight: '{lineHeight.body}'
+      letterSpacing: '{letterSpacing.body}'
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(Body 16px)
+  body-sm:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.body-sm}'
+      fontWeight: '{fontWeight.body-sm}'
+      lineHeight: '{lineHeight.body-sm}'
+      letterSpacing: '{letterSpacing.body-sm}'
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(Small 14px)
+  caption:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.caption}'
+      fontWeight: '{fontWeight.caption}'
+      lineHeight: '{lineHeight.caption}'
+      letterSpacing: '{letterSpacing.caption}'
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(Caption 12px)
+  label:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.label}'
+      fontWeight: '{fontWeight.label}'
+      lineHeight: '{lineHeight.label}'
+      letterSpacing: '{letterSpacing.label}'
+    $extensions:
+      desyng.source: RECOMMENDED
+  button:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.button}'
+      fontWeight: '{fontWeight.button}'
+      lineHeight: '{lineHeight.button}'
+      letterSpacing: '{letterSpacing.button}'
+    $extensions:
+      desyng.source: 'NORMALIZED(ADR-SYSTEM.md: "label: IBM Plex Sans Medium")'
+  overline:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.sans}'
+      fontSize: '{fontSize.overline}'
+      fontWeight: '{fontWeight.overline}'
+      lineHeight: '{lineHeight.overline}'
+      letterSpacing: '{letterSpacing.overline}'
+    $extensions:
+      desyng.source: RECOMMENDED
+  mono-data:
+    $type: typography
+    $value:
+      fontFamily: '{font.family.mono}'
+      fontSize: '{fontSize.mono-data}'
+      fontWeight: '{fontWeight.mono-data}'
+      lineHeight: '{lineHeight.mono-data}'
+      letterSpacing: '{letterSpacing.mono-data}'
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(IBM Plex Mono para IDs/metricas/dados)
+space:
+  '0':
+    $type: dimension
+    $value: 0px
+    $extensions:
+      desyng.source: OBSERVED
+  '0.5':
+    $type: dimension
+    $value: 2px
+    $extensions:
+      desyng.source: RECOMMENDED(fills Tailwind-compatible scale)
+  '1':
+    $type: dimension
+    $value: 4px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '2':
+    $type: dimension
+    $value: 8px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '3':
+    $type: dimension
+    $value: 12px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '4':
+    $type: dimension
+    $value: 16px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '6':
+    $type: dimension
+    $value: 24px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '8':
+    $type: dimension
+    $value: 32px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '12':
+    $type: dimension
+    $value: 48px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '16':
+    $type: dimension
+    $value: 64px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '24':
+    $type: dimension
+    $value: 96px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md
+  '32':
+    $type: dimension
+    $value: 128px
+    $extensions:
+      desyng.source: RECOMMENDED(fills Tailwind-compatible scale)
+radius:
+  none:
+    $type: dimension
+    $value: 0px
+    $extensions:
+      desyng.source: OBSERVED
+  sm:
+    $type: dimension
+    $value: 4px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(SPEC-SURFACE-001 lower bound)
+  md:
+    $type: dimension
+    $value: 8px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(SPEC-SURFACE-001 radius 8-16px)
+  lg:
+    $type: dimension
+    $value: 12px
+    $extensions:
+      desyng.source: NORMALIZED(midpoint 8-16px)
+  xl:
+    $type: dimension
+    $value: 16px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(SPEC-SURFACE-001 upper bound)
+  pill:
+    $type: dimension
+    $value: 999px
+    $extensions:
+      desyng.source: OBSERVED:ADR-SYSTEM.md(botao primario pill/rounded-large)
+  full:
+    $type: dimension
+    $value: 9999px
+    $extensions:
+      desyng.source: RECOMMENDED
+border:
+  width:
+    hairline:
+      $type: dimension
+      $value: 0.5px
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md(SPEC-LINE-001 secondary/grid)
+    thin:
+      $type: dimension
+      $value: 1px
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md(SPEC-LINE-001 primary)
+shadow:
+  none:
+    $type: shadow
+    $value: none
+  sm:
+    $type: shadow
+    $value: 0 1px 2px rgba(20,20,20,0.04)
+    $extensions:
+      desyng.source: 'NORMALIZED(ADR-SYSTEM.md: "sombras minimas", exact value not specified)'
+  md:
+    $type: shadow
+    $value: 0 4px 12px rgba(20,20,20,0.06)
+    $extensions:
+      desyng.source: RECOMMENDED
+  hover:
+    $type: shadow
+    $value: 0 4px 16px rgba(20,20,20,0.08)
+    $extensions:
+      desyng.source: RECOMMENDED(hover elevation for cards)
+opacity:
+  line-primary:
+    $type: number
+    $value: 0.8
+    $extensions:
+      desyng.source: NORMALIZED(ADR-SYSTEM.md SPEC-LINE-001 range 60-90%)
+  line-secondary:
+    $type: number
+    $value: 0.3
+    $extensions:
+      desyng.source: NORMALIZED(range 20-40%)
+  line-grid:
+    $type: number
+    $value: 0.12
+    $extensions:
+      desyng.source: NORMALIZED(range 8-15%)
+  disabled:
+    $type: number
+    $value: 0.5
+    $extensions:
+      desyng.source: RECOMMENDED
+breakpoint:
+  mobile:
+    $type: dimension
+    $value: 0px
+  tablet:
+    $type: dimension
+    $value: 768px
+    $extensions:
+      desyng.source: NORMALIZED(astro-blog.md structural breakpoint; not a color decision)
+  desktop:
+    $type: dimension
+    $value: 1024px
+    $extensions:
+      desyng.source: NORMALIZED(astro-blog.md structural breakpoint)
+container:
+  page:
+    $type: dimension
+    $value: 1200px
+    $extensions:
+      desyng.source: NORMALIZED(astro-blog.md + CARDS pack wireframes, structural only)
+  reading:
+    $type: dimension
+    $value: 720px
+    $extensions:
+      desyng.source: NORMALIZED(astro-blog.md structural reading column)
+grid:
+  columns-desktop:
+    $type: number
+    $value: 12
+    $extensions:
+      desyng.source: RECOMMENDED(industry-standard web grid)
+  columns-tablet:
+    $type: number
+    $value: 8
+    $extensions:
+      desyng.source: RECOMMENDED
+  columns-mobile:
+    $type: number
+    $value: 4
+    $extensions:
+      desyng.source: RECOMMENDED
+  gutter-desktop:
+    $type: dimension
+    $value: 24px
+    $extensions:
+      desyng.source: NORMALIZED(space.6)
+  gutter-mobile:
+    $type: dimension
+    $value: 16px
+    $extensions:
+      desyng.source: NORMALIZED(space.4)
+motion:
+  duration:
+    micro:
+      $type: duration
+      $value: 150ms
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md(SPEC-MOTION-001 range 120-180ms)
+    default:
+      $type: duration
+      $value: 200ms
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md(range 180-250ms)
+    large:
+      $type: duration
+      $value: 300ms
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md(range 250-400ms)
+  easing:
+    out:
+      $type: cubicBezier
+      $value:
+      - 0
+      - 0
+      - 0.2
+      - 1
+      $extensions:
+        desyng.source: OBSERVED:ADR-SYSTEM.md(ease-out)
+  allowed_properties:
+  - opacity
+  - transform:translate
+  - transform:scale-subtle
+  - layer-depth(shadow/elevation)
+  forbidden_properties:
+  - bouncing
+  - excessive-parallax
+  - decorative-spin
+zIndex:
+  base:
+    $type: number
+    $value: 0
+    $extensions:
+      desyng.source: RECOMMENDED
+  dropdown:
+    $type: number
+    $value: 1000
+    $extensions:
+      desyng.source: RECOMMENDED
+  sticky:
+    $type: number
+    $value: 1100
+    $extensions:
+      desyng.source: RECOMMENDED
+  overlay:
+    $type: number
+    $value: 1200
+    $extensions:
+      desyng.source: RECOMMENDED
+  modal:
+    $type: number
+    $value: 1300
+    $extensions:
+      desyng.source: RECOMMENDED
+  toast:
+    $type: number
+    $value: 1400
+    $extensions:
+      desyng.source: RECOMMENDED
+  tooltip:
+    $type: number
+    $value: 1500
+    $extensions:
+      desyng.source: RECOMMENDED

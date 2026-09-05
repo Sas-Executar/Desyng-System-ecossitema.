@@ -1,0 +1,11 @@
+asset_id,slide_number,title,filename,relative_path,format,aspect_ratio,dimensions,status,notes
+APPBLOG-0169-001,01,Pack Visual · App + Blog,01_pack-visual_app-blog_cover_16x9.png,slides/01_pack-visual_app-blog_cover_16x9.png,PNG,16:9,1672x941,Ready,Capa do deck
+APPBLOG-0169-002,02,Paleta e contraste,02_paleta-e-contraste_16x9.png,slides/02_paleta-e-contraste_16x9.png,PNG,16:9,1672x941,Ready,Fundação cromática e regra de uso
+APPBLOG-0169-003,03,Tipografia e hierarquia,03_tipografia-e-hierarquia_16x9.png,slides/03_tipografia-e-hierarquia_16x9.png,PNG,16:9,1672x941,Ready,Sistema tipográfico para app e blog
+APPBLOG-0169-004,04,Botões e controles,04_botoes-e-controles_16x9.png,slides/04_botoes-e-controles_16x9.png,PNG,16:9,1672x941,Ready,Componentes de ação e entrada
+APPBLOG-0169-005,05,Mockup mobile · App,05_mockup-mobile_app_16x9.png,slides/05_mockup-mobile_app_16x9.png,PNG,16:9,1672x941,Ready,Telas mobile e fluxos principais
+APPBLOG-0169-006,06,Mockup web · Blog,06_mockup-web_blog_16x9.png,slides/06_mockup-web_blog_16x9.png,PNG,16:9,1672x941,Ready,Home editorial e descoberta
+APPBLOG-0169-007,07,Artigo e legibilidade,07_artigo-e-legibilidade_16x9.png,slides/07_artigo-e-legibilidade_16x9.png,PNG,16:9,1672x941,Ready,Padrão editorial para leitura longa
+APPBLOG-0169-008,08,Biblioteca de componentes,08_biblioteca-de-componentes_16x9.png,slides/08_biblioteca-de-componentes_16x9.png,PNG,16:9,1672x941,Ready,Blocos reutilizáveis do sistema
+APPBLOG-0169-009,09,Visuais automáticos e infográficos,09_visuais-automaticos-e-infograficos_16x9.png,slides/09_visuais-automaticos-e-infograficos_16x9.png,PNG,16:9,1672x941,Ready,Linguagem visual automática e isométrica
+APPBLOG-0169-010,10,Aplicação do sistema,10_aplicacao-do-sistema_16x9.png,slides/10_aplicacao-do-sistema_16x9.png,PNG,16:9,1672x941,Ready,Resumo do ecossistema e checklist
