@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "EXECUTAR",
+    "slug": "executar-app",
+    "scheme": "executar",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "plugins": ["expo-router"],
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

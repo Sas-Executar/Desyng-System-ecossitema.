@@ -12,6 +12,7 @@ import { mkdirSync, writeFileSync, readFileSync, readdirSync, copyFileSync } fro
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
+import ts from "typescript";
 import type { DesignTokens, TokenValue } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -218,7 +219,19 @@ function main() {
 
   writeFileSync(join(DIST, "variables.css"), buildVariablesCss(tokens));
   writeFileSync(join(DIST, "theme.css"), buildThemeCss(tokens));
-  writeFileSync(join(DIST, "tokens.native.ts"), buildTokensNativeTs(tokens));
+  const tokensNativeSource = buildTokensNativeTs(tokens);
+  writeFileSync(join(DIST, "tokens.native.ts"), tokensNativeSource);
+  // package.json's "./tokens.native" export points at dist/tokens.native.js
+  // (declared alongside dist/tokens.native.d.ts, written further down) — this
+  // was missing for a while: nothing consumed apps/app/tamagui.config.ts's
+  // `@executar/design-tokens/tokens.native` import until Phase 2C.3 actually
+  // bundled it (`expo export`), which is when "could not be found" surfaced.
+  // Metro/webpack/Vite all need a real .js file, not just the .ts source
+  // dist/tokens.native.ts is kept as above for readability/diffing.
+  const { outputText } = ts.transpileModule(tokensNativeSource, {
+    compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
+  });
+  writeFileSync(join(DIST, "tokens.native.js"), outputText);
   writeFileSync(join(DIST, "design-tokens.yaml"), yaml.dump(tokens, { noRefs: true, lineWidth: 100 }));
   writeFileSync(join(DIST, "design-tokens.json"), JSON.stringify(tokens, null, 2));
 
