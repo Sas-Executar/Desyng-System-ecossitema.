@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { MetaBar } from '../../components/MetaBar'
+import { RichTextRenderer } from '../../components/RichTextRenderer'
+import { getPostBySlug } from '../../lib/payload-client'
+
+const { slug } = Astro.params
+const post = slug ? await getPostBySlug(slug) : null
+
+if (!post) {
+  return Astro.redirect('/blog')
+}
+---
+
+<BaseLayout title={post.title}>
+  <article class="container--reading">
+    <h1 class="text-h1" style="margin-bottom: var(--space-3);">{post.title}</h1>
+    <div style="margin-bottom: var(--space-6);">
+      <MetaBar post={post} client:load />
+    </div>
+    <RichTextRenderer data={post.content} client:load />
+  </article>
+</BaseLayout>

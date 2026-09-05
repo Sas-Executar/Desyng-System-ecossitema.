@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "@executar/design-tokens/styles/reset.css";
+@import "@executar/design-tokens/styles/typography.css";
+@import "@executar/design-tokens/styles/layout.css";
+@import "@executar/design-tokens/styles/utilities.css";
+@import "@executar/ui/styles.css";

@@ -84,6 +84,14 @@
 .ex-badge {
   display: inline-flex;
   align-items: center;
+  /* A flex/grid parent with the default `align-items: stretch` (e.g. a
+     `flex-direction: column` card layout) otherwise stretches this
+     inline-flex span to the parent's full cross-axis size — found when
+     apps/blog's PostCard rendered a full-width pill in a real browser,
+     not in isolated Storybook stories. flex-shrink:0 keeps it from being
+     squeezed the other way in a row layout. */
+  align-self: flex-start;
+  flex-shrink: 0;
   font-family: var(--font-family-sans);
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
