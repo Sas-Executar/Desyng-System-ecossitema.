@@ -1,0 +1,33 @@
+---
+import type { Post } from '../../lib/payload-client'
+
+interface Props {
+  posts: Post[]
+}
+const { posts } = Astro.props as Props
+---
+
+<!-- Carrossel — cards verticais, scroll horizontal com snap. Sem limite
+     rígido de itens (handoff § Edge Cases), mas fraco visualmente com
+     menos de 3 — puxa os posts mais recentes fora da Seleção. -->
+<section class="carousel-section" id="explore">
+  <div class="carousel-head">
+    <h2>Explore mais</h2>
+    <span>Arraste →</span>
+  </div>
+  <div class="carousel">
+    {
+      posts.map((post) => (
+        <a class="carousel-card" href={`/blog/${post.slug}`}>
+          <div
+            class="visual"
+            style={post.featuredImage?.url ? `background-image:url(${JSON.stringify(post.featuredImage.url)})` : ''}
+          />
+          <div class="copy">
+            <h3>{post.title}</h3>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

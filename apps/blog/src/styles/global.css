@@ -1,6 +1,15 @@
 @import "tailwindcss";
-@import "@executar/design-tokens/styles/reset.css";
-@import "@executar/design-tokens/styles/typography.css";
-@import "@executar/design-tokens/styles/layout.css";
-@import "@executar/design-tokens/styles/utilities.css";
-@import "@executar/ui/styles.css";
+@import "./editorial-tokens.css";
+@import "./editorial-components.css";
+
+/*
+ * The blog no longer imports @executar/design-tokens/styles/* or
+ * @executar/ui/styles.css — see apps/blog/README.md "Editorial Hybrid v6"
+ * section for why: this app's visual system (Editorial Hybrid, yellow/black,
+ * SF Pro + New York) is a different, blog-only design system from the one
+ * @executar/design-tokens + @executar/ui provide for apps/admin/apps/app
+ * (confirmed with the user before this change). The Callout block still
+ * resolves its `type` through @executar/callout-protocol's registry (kept
+ * as a dependency); only its VISUAL rendering moved to a blog-native
+ * component (src/components/editorial/Callout.astro).
+ */

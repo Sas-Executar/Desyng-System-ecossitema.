@@ -1,0 +1,22 @@
+---
+export type ButtonVariant = 'primary' | 'accent' | 'outline-light' | 'outline-dark'
+
+interface Props {
+  variant?: ButtonVariant
+  href: string
+  class?: string
+}
+const { variant = 'primary', href, class: className = '' } = Astro.props as Props
+---
+
+<!--
+  Botão — Editorial Hybrid v6. 4 variantes escolhidas pelo contraste do
+  fundo onde o botão aparece, não por "importância" (handoff § Componentes):
+  primary/accent para fundo claro, outline-light para fundo escuro/mídia,
+  outline-dark para fundo claro quando accent/primary já foram usados ao lado.
+  min-height:56px, chanfro de 8px (--radius-btn) — o único radius fora de 0
+  no sistema inteiro.
+-->
+<a class={`btn btn-${variant} ${className}`} href={href}>
+  <slot />
+</a>

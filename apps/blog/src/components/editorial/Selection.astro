@@ -1,0 +1,37 @@
+---
+import { CATEGORY_LABELS, type Post } from '../../lib/payload-client'
+
+interface Props {
+  posts: Post[]
+}
+const { posts } = Astro.props as Props
+---
+
+<!--
+  Seleção escura — único momento de contraste alto do sistema (handoff:
+  "o preto aparece uma única vez"). Puxa posts reais marcados `featured`
+  (ver apps/admin/src/collections/Posts.ts), não texto fixo.
+-->
+<section class="selection" id="selection">
+  <div class="selection-inner">
+    <div class="selection-title">
+      <h2>Nossa seleção</h2><span></span>
+    </div>
+    <div class="selection-grid">
+      {
+        posts.map((post) => (
+          <a class="selection-card" href={`/blog/${post.slug}`}>
+            <div
+              class="selection-img"
+              style={post.featuredImage?.url ? `background-image:url(${JSON.stringify(post.featuredImage.url)})` : 'background:#333'}
+            />
+            <div class="selection-body">
+              <small>{CATEGORY_LABELS[post.category]}</small>
+              <h3>{post.title}</h3>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import { CATEGORY_LABELS, type PostCategory } from '../../lib/payload-client'
+
+interface Props {
+  /** Highlights this category in the desktop rail (e.g. current article's category). */
+  activeCategory?: PostCategory
+}
+const { activeCategory } = Astro.props as Props
+
+const categories = Object.entries(CATEGORY_LABELS) as [PostCategory, string][]
+---
+
+<!--
+  Barra superior — Editorial Hybrid v6.
+  Mobile: 3 elementos (menu · marca · busca), chrome soma/aparece com o scroll.
+  Desktop (>=900px): nav visível com links + trilha de categorias, sem menu —
+  ver handoff-editorial-hybrid-v6.md § Comportamento Responsivo.
+-->
+<nav class="global-nav" id="topNav">
+  <div class="nav-inner">
+    <button
+      class="nav-icon menu-btn-mobile"
+      id="menuBtn"
+      aria-label="Abrir navegação"
+      aria-controls="drawer"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+    <a href="/blog" class="wordmark" aria-label="Início">
+      <span class="frame-mark" aria-hidden="true"></span>
+      EXECUTAR
+    </a>
+    <div class="nav-links-desktop" aria-label="Navegação principal">
+      <a href="/blog">Início</a>
+      <a href="/blog#selection">Seleção</a>
+      <a href="/blog#explore">Explorar</a>
+      <a href="/blog#footer">Sobre</a>
+    </div>
+    <button class="nav-icon" aria-label="Buscar">⌕</button>
+  </div>
+  <div class="category-rail-desktop">
+    <div class="category-inner">
+      {
+        categories.map(([slug, label]) => (
+          <a href={`/blog?categoria=${slug}`} class={activeCategory === slug ? 'active' : ''}>
+            {label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>

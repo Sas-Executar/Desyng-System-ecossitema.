@@ -6,7 +6,7 @@ Payload CMS 3 (on Next.js 16) + PostgreSQL — the content/admin SOT per `refere
 
 - **Users** — auth-enabled, admin login.
 - **Media** — uploads.
-- **Posts** — blog content. Field shape mirrors `references/source-docs/astro-blog.md` §5's frontmatter schema (category/date/readingTime/title/description). `content` is a Lexical richText field with a `Callout` block registered via `BlocksFeature`.
+- **Posts** — blog content. Field shape mirrors `references/source-docs/astro-blog.md` §5's frontmatter schema (category/date/readingTime/title/description), plus `featured` (checkbox) and `featuredImage` (upload, expected vertical) added for `apps/blog`'s Editorial Hybrid v6 system — see that app's README for how they're used ("Nossa Seleção", the 100vh feature-media cover). `content` is a Lexical richText field with a `Callout` block registered via `BlocksFeature`.
 - **Callout block** (`src/blocks/Callout.ts`) — implements ADR-001 §9 exactly: `type` (select), `title` (text), `body` (richText). `type` options come from `@executar/callout-protocol`'s `CALLOUT_TYPES`, so the CMS schema and the runtime registry can never drift apart.
 
 ## Local setup
@@ -21,7 +21,7 @@ pnpm --filter @executar/admin generate:types
 
 # 3. Run
 pnpm --filter @executar/admin dev     # http://localhost:3000/admin
-pnpm --filter @executar/admin seed    # creates one sample post with a Callout block
+pnpm --filter @executar/admin seed    # seeds 5 posts (idempotent), 3 `featured`, with generated placeholder covers + one Callout block
 pnpm --filter @executar/admin build   # production build (verified — compiles clean)
 ```
 

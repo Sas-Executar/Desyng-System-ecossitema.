@@ -1,0 +1,32 @@
+---
+import Button from './Button.astro'
+
+/**
+ * Grade promocional — 4 tiles, 1 CTA cada (handoff § Componentes: "1 CTA
+ * por tile, nunca mais de um"). Texto editorial fixo, como no handoff — não
+ * mapeia para um dado do Payload, então não faz sentido "puxar" nada aqui.
+ */
+const tiles = [
+  { tone: 'soft', title: 'Leitura sem ruído.', body: 'Tipografia ampla, largura controlada e contraste consistente.', href: '/blog#selection', label: 'Saiba mais', variant: 'primary' as const },
+  { tone: 'dark', title: 'Preto. Branco. Amarelo.', body: 'Uma gramática editorial simples com hierarquia forte.', href: '/blog#selection', label: 'Explorar', variant: 'accent' as const },
+  { tone: 'yellow', title: 'Destaque que funciona.', body: 'Amarelo para atenção; preto para legibilidade.', href: '/blog#explore', label: 'Abrir', variant: 'primary' as const },
+  { tone: 'soft', title: 'Responsivo por padrão.', body: 'Desktop, tablet e mobile usam a mesma hierarquia semântica.', href: '/blog#explore', label: 'Ver módulos', variant: 'outline-dark' as const },
+]
+---
+
+<section class="promo" aria-label="Destaques">
+  <div class="promo-grid">
+    {
+      tiles.map((tile) => (
+        <article class={`tile ${tile.tone}`}>
+          <h3>{tile.title}</h3>
+          <p>{tile.body}</p>
+          <Button variant={tile.variant} href={tile.href}>
+            {tile.label}
+          </Button>
+          <div class="tile-art" aria-hidden="true" />
+        </article>
+      ))
+    }
+  </div>
+</section>

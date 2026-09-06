@@ -178,6 +178,13 @@ export interface Post {
    * minutos
    */
   readingTime?: number | null;
+  /**
+   * Aparece na seção "Nossa Seleção" do blog editorial (Editorial Hybrid v6). Se menos de 3 posts estiverem marcados, o blog completa com os mais recentes.
+   */
+  featured?: boolean | null;
+  /**
+   * Capa vertical do post — usada em tela cheia (100vh) no topo do artigo, e recortada em 3:4 nos cards de "Nossa Seleção" e do carrossel (Editorial Hybrid v6). Envie uma imagem em retrato; imagens horizontais são recortadas pelo centro.
+   */
   featuredImage?: (number | null) | Media;
   content: {
     root: {
@@ -327,6 +334,7 @@ export interface PostsSelect<T extends boolean = true> {
   description?: T;
   publishedDate?: T;
   readingTime?: T;
+  featured?: T;
   featuredImage?: T;
   content?: T;
   updatedAt?: T;

@@ -1,0 +1,20 @@
+---
+import type { Post } from '../../lib/payload-client'
+
+interface Props {
+  post: Post
+}
+const { post } = Astro.props as Props
+
+const formattedDate = new Date(post.publishedDate).toLocaleDateString('pt-BR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+---
+
+<div class="article-meta">
+  <strong>Redação EXECUTAR</strong><br />
+  Publicado em {formattedDate}
+  {post.readingTime ? <> · {post.readingTime} min de leitura</> : null}
+</div>

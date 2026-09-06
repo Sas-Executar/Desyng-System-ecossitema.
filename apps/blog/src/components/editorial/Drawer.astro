@@ -1,0 +1,55 @@
+---
+import { CATEGORY_LABELS, type PostCategory } from '../../lib/payload-client'
+
+interface Props {
+  activeCategory?: PostCategory
+}
+const { activeCategory } = Astro.props as Props
+
+const categories = Object.entries(CATEGORY_LABELS) as [PostCategory, string][]
+---
+
+<!--
+  Drawer lateral — mobile only (<900px). Toda a navegação (seções + categorias)
+  vive aqui, liberando a barra superior para só 3 elementos.
+
+  Acessibilidade (handoff § Acessibilidade — pendência resolvida agora):
+  o foco fica preso dentro do drawer enquanto aberto. `<main>` recebe
+  `inert` (via script em BaseLayout.astro) para tirar todo o conteúdo por
+  trás do backdrop da árvore de foco/leitores de tela — não só visualmente
+  escondido atrás do backdrop, como o protótipo v6 deixava.
+-->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Navegação">
+  <div class="drawer-header">
+    <div class="drawer-id">
+      <span class="drawer-mark" aria-hidden="true"></span>
+      <div>
+        <strong>EXECUTAR</strong>
+        <span>Editorial</span>
+      </div>
+    </div>
+    <button class="drawer-close" id="drawerClose" aria-label="Fechar navegação">✕</button>
+  </div>
+
+  <div class="drawer-group">
+    <div class="drawer-label">Navegar</div>
+    <a class="drawer-link active" href="/blog">Início</a>
+    <a class="drawer-link" href="/blog#selection">Nossa Seleção</a>
+    <a class="drawer-link" href="/blog#explore">Explorar</a>
+    <a class="drawer-link" href="/blog#footer">Sobre</a>
+  </div>
+
+  <div class="drawer-divider"></div>
+
+  <div class="drawer-group">
+    <div class="drawer-label">Categorias</div>
+    {
+      categories.map(([slug, label]) => (
+        <a class={`drawer-link${activeCategory === slug ? ' active' : ''}`} href={`/blog?categoria=${slug}`}>
+          {label}
+        </a>
+      ))
+    }
+  </div>
+</aside>

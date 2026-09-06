@@ -1,0 +1,26 @@
+---
+interface Props {
+  active?: 'inicio' | 'selecao' | 'explorar'
+}
+const { active = 'inicio' } = Astro.props as Props
+---
+
+<!--
+  Barra inferior — mobile only, exatamente 3 destinos (handoff § O que NÃO
+  fazer: "não adicionar um 4º item"). Some/aparece com o scroll junto com
+  .global-nav — ver o script de sincronização em BaseLayout.astro.
+-->
+<nav class="bottom-bar" id="bottomBar" aria-label="Navegação inferior">
+  <a class={`bottom-tab${active === 'inicio' ? ' active' : ''}`} href="/blog" data-tab="inicio">
+    <span class="glyph" aria-hidden="true">⌂</span>
+    Início
+  </a>
+  <a class={`bottom-tab${active === 'selecao' ? ' active' : ''}`} href="/blog#selection" data-tab="selecao">
+    <span class="glyph" aria-hidden="true">◆</span>
+    Seleção
+  </a>
+  <a class={`bottom-tab${active === 'explorar' ? ' active' : ''}`} href="/blog#explore" data-tab="explorar">
+    <span class="glyph" aria-hidden="true">▤</span>
+    Explorar
+  </a>
+</nav>

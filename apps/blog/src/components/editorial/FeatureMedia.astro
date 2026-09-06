@@ -1,0 +1,31 @@
+---
+interface Props {
+  /** Image URL — always rendered as a vertical, full-bleed background (handoff § O que NÃO fazer: nunca horizontal). */
+  imageUrl?: string | null
+  alt?: string
+  eyebrow: string
+  title: string
+  /** Anchor id so Hero/nav can link straight to it (e.g. #feature). */
+  id?: string
+}
+const { imageUrl, alt, eyebrow, title, id } = Astro.props as Props
+
+// No real cover yet (e.g. a post without featuredImage) — a flat charcoal
+// fill keeps the 100vh vertical block intact instead of a broken/empty
+// section, same intent as the prototype's gradient placeholder.
+const background = imageUrl ? `background-image: url(${JSON.stringify(imageUrl)});` : 'background-color: #171717;'
+---
+
+<!--
+  Mídia de destaque — vertical, 100vh, sem gutter (handoff § Componentes:
+  min-height:100vh, width:100%, sem raio). Reveal de scroll único via
+  IntersectionObserver em BaseLayout.astro (dispara 1x, unobserve depois).
+-->
+<div class="feature-media-wrap">
+  <div class="feature-media" id={id} style={background} role="img" aria-label={alt ?? title}>
+    <div class="overlay">
+      <small>{eyebrow}</small>
+      <h2>{title}</h2>
+    </div>
+  </div>
+</div>

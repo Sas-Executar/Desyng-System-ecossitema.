@@ -1,30 +1,152 @@
 ---
 import '../styles/global.css'
+import GlobalNav from '../components/editorial/GlobalNav.astro'
+import Drawer from '../components/editorial/Drawer.astro'
+import BottomBar from '../components/editorial/BottomBar.astro'
+import Footer from '../components/editorial/Footer.astro'
+import type { PostCategory } from '../lib/payload-client'
 
 interface Props {
   title: string
+  /** Highlights this category in the desktop rail / drawer. */
+  activeCategory?: PostCategory
+  /** Highlights the matching bottom-bar tab. */
+  activeTab?: 'inicio' | 'selecao' | 'explorar'
 }
-const { title } = Astro.props
+const { title, activeCategory, activeTab } = Astro.props as Props
 ---
 
 <!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>{title} · EXECUTAR Blog</title>
+    <meta
+      name="description"
+      content="Editorial Hybrid v6: identidade amarelo/preto, tipografia de sistema Apple, navegação em drawer + barra inferior no mobile, nav visível em desktop."
+    />
   </head>
   <body>
-    <header class="container" style="padding-block: var(--space-6); border-bottom: var(--border-width-thin) solid var(--semantic-border-default);">
-      <a href="/blog" style="font-weight: var(--font-weight-h3); color: var(--semantic-text-primary); text-decoration: none;">
-        EXECUTAR Blog
-      </a>
-    </header>
-    <main class="container" style="padding-block: var(--space-8);">
+    <GlobalNav activeCategory={activeCategory} />
+    <Drawer activeCategory={activeCategory} />
+
+    <main id="mainContent">
       <slot />
     </main>
-    <footer class="container" style="padding-block: var(--space-6); border-top: var(--border-width-thin) solid var(--semantic-border-default); color: var(--semantic-text-secondary);">
-      <p class="text-caption">EXECUTAR — Desyng System</p>
-    </footer>
+
+    <Footer />
+    <BottomBar active={activeTab} />
+
+    <script>
+      // ---- Drawer lateral: abrir/fechar + focus trap ----
+      // Correção de acessibilidade pendente no handoff (§ Acessibilidade,
+      // "Pendência antes de produção"): o protótipo v6 escondia o conteúdo
+      // por trás do backdrop só visualmente — Tab ainda navegava para ele.
+      // Aqui, `inert` no <main> tira esse conteúdo da árvore de foco e de
+      // leitores de tela enquanto o drawer está aberto, e o foco fica
+      // ciclando só entre os elementos focáveis do próprio drawer.
+      const menuBtn = document.getElementById('menuBtn') as HTMLButtonElement
+      const drawer = document.getElementById('drawer') as HTMLElement
+      const backdrop = document.getElementById('drawerBackdrop') as HTMLElement
+      const drawerClose = document.getElementById('drawerClose') as HTMLButtonElement
+      const mainContent = document.getElementById('mainContent') as HTMLElement
+      const topNav = document.getElementById('topNav') as HTMLElement
+      const bottomBar = document.getElementById('bottomBar') as HTMLElement
+
+      const FOCUSABLE_SELECTOR =
+        'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+
+      function getFocusable(container: HTMLElement): HTMLElement[] {
+        return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))
+      }
+
+      function openDrawer() {
+        drawer.classList.add('open')
+        backdrop.classList.add('open')
+        drawer.setAttribute('aria-hidden', 'false')
+        menuBtn.setAttribute('aria-expanded', 'true')
+        // com o drawer aberto, o chrome fica visível — evita esconder o botão de fechar
+        topNav.classList.remove('hidden')
+        bottomBar?.classList.remove('hidden')
+        // focus trap: tira o resto da página da árvore de foco/acessibilidade
+        mainContent.setAttribute('inert', '')
+        const focusable = getFocusable(drawer)
+        ;(focusable[0] ?? drawerClose).focus()
+        document.addEventListener('keydown', onDrawerKeydown)
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('open')
+        backdrop.classList.remove('open')
+        drawer.setAttribute('aria-hidden', 'true')
+        menuBtn.setAttribute('aria-expanded', 'false')
+        mainContent.removeAttribute('inert')
+        document.removeEventListener('keydown', onDrawerKeydown)
+        menuBtn.focus() // devolve o foco para quem abriu o drawer
+      }
+
+      function onDrawerKeydown(e: KeyboardEvent) {
+        if (e.key === 'Escape') {
+          closeDrawer()
+          return
+        }
+        if (e.key !== 'Tab') return
+        const focusable = getFocusable(drawer)
+        if (focusable.length === 0) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+
+      menuBtn?.addEventListener('click', openDrawer)
+      drawerClose?.addEventListener('click', closeDrawer)
+      backdrop?.addEventListener('click', closeDrawer)
+      document.querySelectorAll('.drawer-link').forEach((a) => a.addEventListener('click', closeDrawer))
+
+      // ---- Chrome (topo + barra inferior): some ao descer, aparece ao subir ----
+      // Sincronizados — nunca um sem o outro (handoff § Estados e Interações).
+      let lastY = window.scrollY
+      let ticking = false
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (ticking) return
+          requestAnimationFrame(() => {
+            const y = window.scrollY
+            const goingDown = y > lastY && y > 80
+            bottomBar?.classList.toggle('hidden', goingDown)
+            topNav.classList.toggle('hidden', goingDown)
+            lastY = y
+            ticking = false
+          })
+          ticking = true
+        },
+        { passive: true },
+      )
+
+      // ---- Reveal único: qualquer .feature-media da página ----
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const featureMedias = document.querySelectorAll<HTMLElement>('.feature-media')
+      if (reduceMotion) {
+        featureMedias.forEach((el) => el.classList.add('in'))
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in')
+              io.unobserve(entry.target)
+            }
+          })
+        }, { threshold: 0.1 })
+        featureMedias.forEach((el) => io.observe(el))
+      }
+    </script>
   </body>
 </html>

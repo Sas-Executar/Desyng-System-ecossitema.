@@ -1,7 +1,7 @@
 {
   "name": "@executar/blog",
   "version": "0.1.0",
-  "description": "EXECUTAR Blog — Astro + React islands + Tailwind, consuming apps/admin (Payload) as a headless CMS and @executar/ui for components.",
+  "description": "EXECUTAR Blog — Astro + React islands + Tailwind, consuming apps/admin (Payload) as a headless CMS. Visual system: Editorial Hybrid v6 (blog-native tokens/components, not @executar/design-tokens or @executar/ui — see README.md).",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,8 +15,6 @@
     "@astrojs/node": "11.1.5",
     "@astrojs/react": "6.0.5",
     "@executar/callout-protocol": "workspace:*",
-    "@executar/design-tokens": "workspace:*",
-    "@executar/ui": "workspace:*",
     "@payloadcms/richtext-lexical": "3.88.0",
     "astro": "7.3.1",
     "react": "19.2.8",

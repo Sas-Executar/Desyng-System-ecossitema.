@@ -1,6 +1,6 @@
 # @executar/design-tokens
 
-Canonical design tokens for the EXECUTAR ecosystem (Desyng System). Single source of truth for color, typography, spacing, radius, border, shadow, motion, breakpoints, grid, and z-index — consumed by `apps/blog` (CSS), `apps/admin`, `apps/app` (Tamagui/React Native), and the standalone showroom artifact.
+Canonical design tokens for the EXECUTAR ecosystem (Desyng System). Single source of truth for color, typography, spacing, radius, border, shadow, motion, breakpoints, grid, and z-index — consumed by `apps/admin`, `apps/app` (Tamagui/React Native), and the standalone showroom artifact. **Not** consumed by `apps/blog` as of 2026-09-06 — that app runs its own, blog-only design system (Editorial Hybrid v6, yellow/black, see `apps/blog/README.md`), confirmed with the user rather than assumed.
 
 ## Two themes (since 2026-09-06)
 

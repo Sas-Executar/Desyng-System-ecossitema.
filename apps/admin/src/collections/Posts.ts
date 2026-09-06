@@ -31,7 +31,25 @@ export const Posts: CollectionConfig = {
     { name: 'description', type: 'textarea', required: true },
     { name: 'publishedDate', type: 'date', required: true, admin: { position: 'sidebar' } },
     { name: 'readingTime', type: 'number', admin: { position: 'sidebar', description: 'minutos' } },
-    { name: 'featuredImage', type: 'upload', relationTo: 'media' },
+    {
+      name: 'featured',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description:
+          'Aparece na seção "Nossa Seleção" do blog editorial (Editorial Hybrid v6). Se menos de 3 posts estiverem marcados, o blog completa com os mais recentes.',
+      },
+    },
+    {
+      name: 'featuredImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Capa vertical do post — usada em tela cheia (100vh) no topo do artigo, e recortada em 3:4 nos cards de "Nossa Seleção" e do carrossel (Editorial Hybrid v6). Envie uma imagem em retrato; imagens horizontais são recortadas pelo centro.',
+      },
+    },
     {
       name: 'content',
       type: 'richText',

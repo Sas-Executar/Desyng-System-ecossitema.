@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { MetaBar } from '../../components/MetaBar'
+import FeatureMedia from '../../components/editorial/FeatureMedia.astro'
+import ArticleMeta from '../../components/editorial/ArticleMeta.astro'
 import { RichTextRenderer } from '../../components/RichTextRenderer'
-import { getPostBySlug } from '../../lib/payload-client'
+import { CATEGORY_LABELS, getPostBySlug } from '../../lib/payload-client'
 
 const { slug } = Astro.params
 const post = slug ? await getPostBySlug(slug) : null
@@ -12,12 +13,20 @@ if (!post) {
 }
 ---
 
-<BaseLayout title={post.title}>
-  <article class="container--reading">
-    <h1 class="text-h1" style="margin-bottom: var(--space-3);">{post.title}</h1>
-    <div style="margin-bottom: var(--space-6);">
-      <MetaBar post={post} client:load />
-    </div>
-    <RichTextRenderer data={post.content} client:load />
-  </article>
+<BaseLayout title={post.title} activeCategory={post.category}>
+  <!-- Mídia vertical 100vh no topo de todo artigo — decisão explícita da v6
+       (handoff § changelog: "confirmado em todo artigo, não só na home"). -->
+  <FeatureMedia
+    imageUrl={post.featuredImage?.url}
+    alt={post.featuredImage?.alt}
+    eyebrow={CATEGORY_LABELS[post.category]}
+    title={post.title}
+  />
+
+  <section class="article-shell" id="article">
+    <ArticleMeta post={post} />
+    <article class="article">
+      <RichTextRenderer data={post.content} client:load />
+    </article>
+  </section>
 </BaseLayout>

@@ -1,0 +1,74 @@
+/**
+ * Editorial Hybrid v6 (NatGeo × Apple UX) — design tokens for @executar/blog.
+ *
+ * Ported byte-for-byte from the approved handoff's tokens-hybrid.css,
+ * keeping every name and value as given (see the handoff's own table in
+ * handoff-editorial-hybrid-v6.md § Design Tokens). This is intentionally
+ * NOT a theme inside @executar/design-tokens: that package's two themes
+ * (executar-classic / modernismo-operacional) share one semantic contract
+ * consumed generically by @executar/ui's components (Button/Card/Badge/...);
+ * Editorial Hybrid's tokens back a wholly different, blog-only component
+ * set (GlobalNav/Drawer/BottomBar/FeatureMedia/Selection/Carousel/...) that
+ * doesn't reuse @executar/ui at all — forcing it into that package would be
+ * a category error, not a simplification. See apps/blog/README.md.
+ */
+:root {
+  /* IDENTIDADE EDITORIAL — cor de marca */
+  --yellow: #ffcc00;
+  --black: #000000;
+  --charcoal: #111111;
+  --charcoal-soft: #1c1c1e;
+
+  /* SUPERFÍCIE — clara é o padrão dominante (legibilidade) */
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --paper: #ffffff;
+  --soft: #f5f5f7;
+  --soft-2: #fbfbfd;
+  --line: #d2d2d7;
+  --line-dark: rgba(255, 255, 255, 0.12);
+  --white: #ffffff;
+
+  /* AÇÃO — preto e amarelo, nunca azul */
+  --action-primary: #000000;
+  --action-accent: #ffcc00;
+
+  /* FONTES DE SISTEMA — nenhum arquivo de fonte redistribuído */
+  --sf: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --sf-text: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --ny: "New York", "New York Small", "Iowan Old Style", Georgia, "Times New Roman", serif;
+
+  /* ESCALA TIPOGRÁFICA */
+  --display-xl: clamp(3.3rem, 8vw, 7.25rem);
+  --display-lg: clamp(2.5rem, 6vw, 5rem);
+  --display-md: clamp(2rem, 4vw, 3.5rem);
+  --headline: clamp(1.75rem, 3vw, 2.6rem);
+  --body-lg: clamp(1.2rem, 1.8vw, 1.45rem);
+  --body: 1rem;
+  --small: 0.875rem;
+  --caption: 0.75rem;
+
+  /* LAYOUT */
+  --nav-h: 56px;
+  --bottombar-h: 64px;
+  --drawer-w: min(84vw, 360px);
+  --shell: 980px;
+  --wide: 1440px;
+  --read: 720px;
+  --gutter: clamp(20px, 4vw, 44px);
+  --gap: 12px;
+  --section: clamp(72px, 9vw, 140px);
+
+  /* FORMA — cantos retos por padrão; chanfro leve só em botões */
+  --radius-card: 0px;
+  --radius-btn: 8px;
+  --radius-nav-icon: 4px;
+
+  /* EFEITOS */
+  --glass-light: rgba(255, 255, 255, 0.86);
+  --glass-dark: rgba(17, 17, 17, 0.82);
+  --shadow: 0 12px 38px rgba(0, 0, 0, 0.08);
+
+  /* MOVIMENTO */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
