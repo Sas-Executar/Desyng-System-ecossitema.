@@ -1,5 +1,5 @@
 {
-  "$description": "EXECUTAR / Desyng System — design tokens. SOT: ADR-SYSTEM.md (Accepted).",
+  "$description": "EXECUTAR / Desyng System — design tokens. SOT: ADR-SYSTEM.md (Accepted). Correction 2026-09-06: DESIGN-TOKENS-003 ('Modernismo Operacional Editorial') added as a second theme and set as the DEFAULT — see meta.defaultTheme and themes.modernismo-operacional. The values at this top level (color/font/fontSize/.../zIndex) now represent the 'executar-classic' theme specifically, kept byte-for-byte unchanged and still selectable via [data-theme='executar-classic'].",
   "color": {
     "palette": {
       "green": {
@@ -517,13 +517,17 @@
           "$type": "color",
           "$value": "{color.palette.neutral.11}",
           "$description": "Passes WCAG AA normal text (5.54:1 on canvas, 5.99:1 on surface). Corrected during Phase 2 build: neutral.10 (previous value) only reached 3.90-4.22:1 and failed the 4.5:1 normal-text minimum — see packages/design-tokens/src/contrast.test.ts.",
-          "$extensions": { "desyng.source": "NORMALIZED:accessibility-fix(confidence:0.8)" }
+          "$extensions": {
+            "desyng.source": "NORMALIZED:accessibility-fix(confidence:0.8)"
+          }
         },
         "muted": {
           "$type": "color",
           "$value": "{color.palette.neutral.10}",
           "$description": "Only reaches 3.90-4.22:1 — meets the 3:1 large-text/non-text minimum, NOT the 4.5:1 normal-text minimum. Restrict to text >=18px/400 or >=14px/600, decorative dividers, or disabled-state icons. Never use for body or caption-sized text (12-14px). Corrected during Phase 2 build from neutral.9, which failed even the 3:1 threshold on canvas (2.80:1).",
-          "$extensions": { "desyng.source": "NORMALIZED:accessibility-fix(confidence:0.8)" }
+          "$extensions": {
+            "desyng.source": "NORMALIZED:accessibility-fix(confidence:0.8)"
+          }
         },
         "on_brand": {
           "$type": "color",
@@ -572,6 +576,14 @@
         "secondary_hover": {
           "$type": "color",
           "$value": "{color.palette.azure.10}"
+        },
+        "secondary_hover_surface": {
+          "$type": "color",
+          "$value": "{color.palette.azure.2}",
+          "$description": "Pale hover-tint surface for outline/secondary buttons — added alongside the modernismo-operacional theme so packages/ui/src/styles.css can reference one semantic token instead of hardcoding a palette family name that only exists in one theme.",
+          "$extensions": {
+            "desyng.source": "NORMALIZED(confidence:0.7)"
+          }
         }
       },
       "state": {
@@ -1110,13 +1122,6 @@
         "desyng.source": "OBSERVED"
       }
     },
-    "0.5": {
-      "$type": "dimension",
-      "$value": "2px",
-      "$extensions": {
-        "desyng.source": "RECOMMENDED(fills Tailwind-compatible scale)"
-      }
-    },
     "1": {
       "$type": "dimension",
       "$value": "4px",
@@ -1183,6 +1188,13 @@
     "32": {
       "$type": "dimension",
       "$value": "128px",
+      "$extensions": {
+        "desyng.source": "RECOMMENDED(fills Tailwind-compatible scale)"
+      }
+    },
+    "0.5": {
+      "$type": "dimension",
+      "$value": "2px",
       "$extensions": {
         "desyng.source": "RECOMMENDED(fills Tailwind-compatible scale)"
       }
@@ -1485,6 +1497,1407 @@
       "$value": 1500,
       "$extensions": {
         "desyng.source": "RECOMMENDED"
+      }
+    }
+  },
+  "meta": {
+    "defaultTheme": "modernismo-operacional",
+    "themes": [
+      "modernismo-operacional",
+      "executar-classic"
+    ]
+  },
+  "themes": {
+    "modernismo-operacional": {
+      "$description": "Modernismo Operacional Editorial (DESIGN-TOKENS-003, v1.0, 2026-09-06) — default theme as of this correction. Color/typography/geometry are theme-specific (this object); layout/breakpoint/grid/zIndex stay shared with executar-classic (see design-tokens.json's top level) since DESIGN-TOKENS-003 doesn't argue those need to differ structurally.",
+      "color": {
+        "palette": {
+          "neutral": {
+            "1": {
+              "$type": "color",
+              "$value": "#FFFFFF",
+              "$description": "step 1",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "2": {
+              "$type": "color",
+              "$value": "#F7F7F7",
+              "$description": "step 2",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "3": {
+              "$type": "color",
+              "$value": "#F1F2F6",
+              "$description": "step 3",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "4": {
+              "$type": "color",
+              "$value": "#E8E8E8",
+              "$description": "step 4",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "5": {
+              "$type": "color",
+              "$value": "#D9DAD7",
+              "$description": "step 5",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "6": {
+              "$type": "color",
+              "$value": "#B9BAB8",
+              "$description": "step 6",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "7": {
+              "$type": "color",
+              "$value": "#8B8D8C",
+              "$description": "step 7",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "8": {
+              "$type": "color",
+              "$value": "#656868",
+              "$description": "step 8",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "9": {
+              "$type": "color",
+              "$value": "#4A4D4F",
+              "$description": "step 9",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "10": {
+              "$type": "color",
+              "$value": "#373B3E",
+              "$description": "step 10",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "11": {
+              "$type": "color",
+              "$value": "#1C1E1F",
+              "$description": "step 11",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            },
+            "12": {
+              "$type": "color",
+              "$value": "#070503",
+              "$description": "step 12",
+              "$extensions": {
+                "desyng.source": "OBSERVED:DESIGN-TOKENS-003 primitive.color.neutral (000..950 renumbered 1..12, 1:1, no interpolation needed)"
+              }
+            }
+          },
+          "blue": {
+            "1": {
+              "$type": "color",
+              "$value": "#FAFBFC",
+              "$description": "step 1",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "2": {
+              "$type": "color",
+              "$value": "#E5EAEF",
+              "$description": "step 2",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "3": {
+              "$type": "color",
+              "$value": "#CFD8E4",
+              "$description": "step 3",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "4": {
+              "$type": "color",
+              "$value": "#B7C6DB",
+              "$description": "step 4",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "5": {
+              "$type": "color",
+              "$value": "#9DB4D3",
+              "$description": "step 5",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "6": {
+              "$type": "color",
+              "$value": "#82A2CC",
+              "$description": "step 6",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "7": {
+              "$type": "color",
+              "$value": "#658FC8",
+              "$description": "step 7",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "8": {
+              "$type": "color",
+              "$value": "#467CC4",
+              "$description": "step 8",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "9": {
+              "$type": "color",
+              "$value": "#336BB6",
+              "$description": "step 9",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "10": {
+              "$type": "color",
+              "$value": "#234D86",
+              "$description": "step 10",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "11": {
+              "$type": "color",
+              "$value": "#153054",
+              "$description": "step 11",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            },
+            "12": {
+              "$type": "color",
+              "$value": "#081321",
+              "$description": "step 12",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.blue.500 (#336BB6) anchored at step 9 (this repo's 'solid/CTA' convention); steps 1-8/10-12 interpolated with the same light-to-dark method used for the executar-classic ramps, confidence 0.7"
+              }
+            }
+          },
+          "green": {
+            "1": {
+              "$type": "color",
+              "$value": "#FBFCFB",
+              "$description": "step 1",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "2": {
+              "$type": "color",
+              "$value": "#EAF0EB",
+              "$description": "step 2",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "3": {
+              "$type": "color",
+              "$value": "#D8E5DB",
+              "$description": "step 3",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "4": {
+              "$type": "color",
+              "$value": "#C6DBCA",
+              "$description": "step 4",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "5": {
+              "$type": "color",
+              "$value": "#B2D3B8",
+              "$description": "step 5",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "6": {
+              "$type": "color",
+              "$value": "#9ECBA6",
+              "$description": "step 6",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "7": {
+              "$type": "color",
+              "$value": "#88C394",
+              "$description": "step 7",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "8": {
+              "$type": "color",
+              "$value": "#72BD81",
+              "$description": "step 8",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "9": {
+              "$type": "color",
+              "$value": "#5BB86D",
+              "$description": "step 9",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "10": {
+              "$type": "color",
+              "$value": "#3A8B4A",
+              "$description": "step 10",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "11": {
+              "$type": "color",
+              "$value": "#22552C",
+              "$description": "step 11",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "12": {
+              "$type": "color",
+              "$value": "#0C1D0F",
+              "$description": "step 12",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.green.500 (#5BB86D) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            }
+          },
+          "yellow": {
+            "1": {
+              "$type": "color",
+              "$value": "#FCFCFA",
+              "$description": "step 1",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "2": {
+              "$type": "color",
+              "$value": "#F7F5EE",
+              "$description": "step 2",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "3": {
+              "$type": "color",
+              "$value": "#F4F0E0",
+              "$description": "step 3",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "4": {
+              "$type": "color",
+              "$value": "#F1EBD1",
+              "$description": "step 4",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "5": {
+              "$type": "color",
+              "$value": "#F0E7C2",
+              "$description": "step 5",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "6": {
+              "$type": "color",
+              "$value": "#F0E3B0",
+              "$description": "step 6",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "7": {
+              "$type": "color",
+              "$value": "#F1E19E",
+              "$description": "step 7",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "8": {
+              "$type": "color",
+              "$value": "#F3DF8A",
+              "$description": "step 8",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "9": {
+              "$type": "color",
+              "$value": "#F7DE75",
+              "$description": "step 9",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "10": {
+              "$type": "color",
+              "$value": "#F5C80B",
+              "$description": "step 10",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "11": {
+              "$type": "color",
+              "$value": "#917604",
+              "$description": "step 11",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            },
+            "12": {
+              "$type": "color",
+              "$value": "#282100",
+              "$description": "step 12",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:DESIGN-TOKENS-003 primitive.color.yellow.300 (#F7DE75, the doc's own 'attention/next' swatch) anchored at step 9; steps interpolated, confidence 0.7"
+              }
+            }
+          },
+          "error": {
+            "1": {
+              "$type": "color",
+              "$value": "#FDFCFC",
+              "$description": "step 1",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "2": {
+              "$type": "color",
+              "$value": "#F8F4F4",
+              "$description": "step 2",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "3": {
+              "$type": "color",
+              "$value": "#F3E8E8",
+              "$description": "step 3",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "4": {
+              "$type": "color",
+              "$value": "#EDD6D6",
+              "$description": "step 4",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "5": {
+              "$type": "color",
+              "$value": "#E8BFBF",
+              "$description": "step 5",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "6": {
+              "$type": "color",
+              "$value": "#E29F9F",
+              "$description": "step 6",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "7": {
+              "$type": "color",
+              "$value": "#DD7676",
+              "$description": "step 7",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "8": {
+              "$type": "color",
+              "$value": "#D64848",
+              "$description": "step 8",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "9": {
+              "$type": "color",
+              "$value": "#C22C2C",
+              "$description": "step 9",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "10": {
+              "$type": "color",
+              "$value": "#982323",
+              "$description": "step 10",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "11": {
+              "$type": "color",
+              "$value": "#792020",
+              "$description": "step 11",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            },
+            "12": {
+              "$type": "color",
+              "$value": "#3B1212",
+              "$description": "step 12",
+              "$extensions": {
+                "desyng.source": "INFERRED:no error/danger family defined in DESIGN-TOKENS-003 — the existing EXECUTAR error ramp is carried over unchanged so Callout's danger state and form validation stay accessible. Confidence 0.5 — revisit if an editorial-appropriate red is specified later."
+              }
+            }
+          }
+        },
+        "semantic": {
+          "background": {
+            "canvas": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.3}"
+            },
+            "surface": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.1}"
+            },
+            "elevated": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.1}"
+            }
+          },
+          "text": {
+            "primary": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.12}"
+            },
+            "secondary": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.8}"
+            },
+            "muted": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.8}",
+              "$description": "DESIGN-TOKENS-003's own primitive.color.neutral.500 (mapped step 7, #8B8D8C) fails WCAG AA even at the 3:1 large-text floor against surface.page (2.99:1 — see packages/design-tokens/src/contrast.test.ts). Remapped to neutral.8 (same value as text.secondary) instead of inventing an unreviewed primitive — a real accessibility bug found and fixed the same way text.secondary/text.muted were fixed in executar-classic.",
+              "$extensions": {
+                "desyng.source": "NORMALIZED:accessibility-fix(confidence:0.8)"
+              }
+            },
+            "on_brand": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.1}"
+            },
+            "link": {
+              "$type": "color",
+              "$value": "{color.palette.blue.9}"
+            }
+          },
+          "border": {
+            "subtle": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.4}"
+            },
+            "default": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.5}"
+            },
+            "strong": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.9}"
+            },
+            "focus": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.12}"
+            }
+          },
+          "action": {
+            "primary": {
+              "$type": "color",
+              "$value": "{color.palette.blue.9}"
+            },
+            "primary_hover": {
+              "$type": "color",
+              "$value": "{color.palette.blue.10}"
+            },
+            "primary_text": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.1}"
+            },
+            "secondary": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.12}",
+              "$description": "DESIGN-TOKENS-003 doesn't name a distinct secondary-action color (only a size/geometry spec for buttons). NORMALIZED choice: secondary = the same neutral.950 ('NOW/SELECTED = preto') the doc's own state hierarchy already uses for emphasis, rendered as an outline — keeps the doc's black=focus/selected logic instead of inventing an unrelated hue.",
+              "$extensions": {
+                "desyng.source": "NORMALIZED(confidence:0.6)"
+              }
+            },
+            "secondary_hover": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.10}"
+            },
+            "secondary_hover_surface": {
+              "$type": "color",
+              "$value": "{color.palette.blue.2}",
+              "$description": "Pale hover-tint surface for outline/secondary buttons — fixes a real cross-theme bug: packages/ui/src/styles.css hardcoded --color-azure-2 for this, which doesn't exist in this theme (family is 'blue', not 'azure'). Added as a proper semantic token in both themes instead.",
+              "$extensions": {
+                "desyng.source": "NORMALIZED(confidence:0.7)"
+              }
+            }
+          },
+          "state": {
+            "success": {
+              "$type": "color",
+              "$value": "{color.palette.green.9}"
+            },
+            "success_text": {
+              "$type": "color",
+              "$value": "{color.palette.green.11}"
+            },
+            "info": {
+              "$type": "color",
+              "$value": "{color.palette.blue.9}"
+            },
+            "info_text": {
+              "$type": "color",
+              "$value": "{color.palette.blue.11}"
+            },
+            "warning": {
+              "$type": "color",
+              "$value": "{color.palette.yellow.9}"
+            },
+            "warning_text": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.12}",
+              "$description": "DESIGN-TOKENS-003's own semantic.color.text.attention uses neutral.950 (dark text), not a tinted yellow — yellow.9 is light, so text on it must stay dark, matching the source doc exactly."
+            },
+            "error": {
+              "$type": "color",
+              "$value": "{color.palette.error.9}"
+            },
+            "error_text": {
+              "$type": "color",
+              "$value": "{color.palette.error.11}"
+            }
+          },
+          "focus": {
+            "ring": {
+              "$type": "color",
+              "$value": "{color.palette.neutral.12}"
+            }
+          }
+        }
+      },
+      "font": {
+        "family": {
+          "sans": {
+            "$type": "fontFamily",
+            "$value": [
+              "Helvetica Neue",
+              "Helvetica",
+              "Arial",
+              "system-ui",
+              "sans-serif"
+            ],
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+            }
+          },
+          "mono": {
+            "$type": "fontFamily",
+            "$value": [
+              "SFMono-Regular",
+              "Consolas",
+              "Liberation Mono",
+              "monospace"
+            ],
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+            }
+          }
+        }
+      },
+      "fontSize": {
+        "display": {
+          "$type": "dimension",
+          "$value": "64px"
+        },
+        "h1": {
+          "$type": "dimension",
+          "$value": "48px"
+        },
+        "h2": {
+          "$type": "dimension",
+          "$value": "36px"
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": "28px"
+        },
+        "title": {
+          "$type": "dimension",
+          "$value": "24px"
+        },
+        "subtitle": {
+          "$type": "dimension",
+          "$value": "20px"
+        },
+        "body-lg": {
+          "$type": "dimension",
+          "$value": "20px"
+        },
+        "body": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "body-sm": {
+          "$type": "dimension",
+          "$value": "15px"
+        },
+        "caption": {
+          "$type": "dimension",
+          "$value": "13px"
+        },
+        "label": {
+          "$type": "dimension",
+          "$value": "14px"
+        },
+        "button": {
+          "$type": "dimension",
+          "$value": "14px"
+        },
+        "overline": {
+          "$type": "dimension",
+          "$value": "13px"
+        },
+        "mono-data": {
+          "$type": "dimension",
+          "$value": "13px"
+        },
+        "display-lg": {
+          "$type": "dimension",
+          "$value": "88px"
+        },
+        "display-xl": {
+          "$type": "dimension",
+          "$value": "120px"
+        },
+        "display-xxl": {
+          "$type": "dimension",
+          "$value": "160px"
+        }
+      },
+      "lineHeight": {
+        "display": {
+          "$type": "dimension",
+          "$value": "67px"
+        },
+        "h1": {
+          "$type": "dimension",
+          "$value": "50px"
+        },
+        "h2": {
+          "$type": "dimension",
+          "$value": "38px"
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": "29px"
+        },
+        "title": {
+          "$type": "dimension",
+          "$value": "25px"
+        },
+        "subtitle": {
+          "$type": "dimension",
+          "$value": "21px"
+        },
+        "body-lg": {
+          "$type": "dimension",
+          "$value": "29px"
+        },
+        "body": {
+          "$type": "dimension",
+          "$value": "23px"
+        },
+        "body-sm": {
+          "$type": "dimension",
+          "$value": "18px"
+        },
+        "caption": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "label": {
+          "$type": "dimension",
+          "$value": "17px"
+        },
+        "button": {
+          "$type": "dimension",
+          "$value": "17px"
+        },
+        "overline": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "mono-data": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "display-lg": {
+          "$type": "dimension",
+          "$value": "77px"
+        },
+        "display-xl": {
+          "$type": "dimension",
+          "$value": "106px"
+        },
+        "display-xxl": {
+          "$type": "dimension",
+          "$value": "141px"
+        }
+      },
+      "fontWeight": {
+        "display": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "h1": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "h2": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "h3": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "title": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "subtitle": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "body-lg": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "body": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "body-sm": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "caption": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "label": {
+          "$type": "fontWeight",
+          "$value": 500
+        },
+        "button": {
+          "$type": "fontWeight",
+          "$value": 500
+        },
+        "overline": {
+          "$type": "fontWeight",
+          "$value": 500
+        },
+        "mono-data": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "display-lg": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "display-xl": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "display-xxl": {
+          "$type": "fontWeight",
+          "$value": 400
+        }
+      },
+      "letterSpacing": {
+        "display": {
+          "$type": "dimension",
+          "$value": "-0.05em"
+        },
+        "h1": {
+          "$type": "dimension",
+          "$value": "-0.035em"
+        },
+        "h2": {
+          "$type": "dimension",
+          "$value": "-0.035em"
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": "-0.035em"
+        },
+        "title": {
+          "$type": "dimension",
+          "$value": "-0.035em"
+        },
+        "subtitle": {
+          "$type": "dimension",
+          "$value": "-0.035em"
+        },
+        "body-lg": {
+          "$type": "dimension",
+          "$value": "-0.012em"
+        },
+        "body": {
+          "$type": "dimension",
+          "$value": "-0.012em"
+        },
+        "body-sm": {
+          "$type": "dimension",
+          "$value": "-0.012em"
+        },
+        "caption": {
+          "$type": "dimension",
+          "$value": "0em"
+        },
+        "label": {
+          "$type": "dimension",
+          "$value": "0.01em"
+        },
+        "button": {
+          "$type": "dimension",
+          "$value": "0.01em"
+        },
+        "overline": {
+          "$type": "dimension",
+          "$value": "0.055em"
+        },
+        "mono-data": {
+          "$type": "dimension",
+          "$value": "0em"
+        },
+        "display-lg": {
+          "$type": "dimension",
+          "$value": "-0.05em"
+        },
+        "display-xl": {
+          "$type": "dimension",
+          "$value": "-0.05em"
+        },
+        "display-xxl": {
+          "$type": "dimension",
+          "$value": "-0.05em"
+        }
+      },
+      "typography": {
+        "display": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.display}",
+            "fontWeight": "{fontWeight.display}",
+            "lineHeight": "{lineHeight.display}",
+            "letterSpacing": "{letterSpacing.display}"
+          }
+        },
+        "h1": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.h1}",
+            "fontWeight": "{fontWeight.h1}",
+            "lineHeight": "{lineHeight.h1}",
+            "letterSpacing": "{letterSpacing.h1}"
+          }
+        },
+        "h2": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.h2}",
+            "fontWeight": "{fontWeight.h2}",
+            "lineHeight": "{lineHeight.h2}",
+            "letterSpacing": "{letterSpacing.h2}"
+          }
+        },
+        "h3": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.h3}",
+            "fontWeight": "{fontWeight.h3}",
+            "lineHeight": "{lineHeight.h3}",
+            "letterSpacing": "{letterSpacing.h3}"
+          }
+        },
+        "title": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.title}",
+            "fontWeight": "{fontWeight.title}",
+            "lineHeight": "{lineHeight.title}",
+            "letterSpacing": "{letterSpacing.title}"
+          }
+        },
+        "subtitle": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.subtitle}",
+            "fontWeight": "{fontWeight.subtitle}",
+            "lineHeight": "{lineHeight.subtitle}",
+            "letterSpacing": "{letterSpacing.subtitle}"
+          }
+        },
+        "body-lg": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.body-lg}",
+            "fontWeight": "{fontWeight.body-lg}",
+            "lineHeight": "{lineHeight.body-lg}",
+            "letterSpacing": "{letterSpacing.body-lg}"
+          }
+        },
+        "body": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.body}",
+            "fontWeight": "{fontWeight.body}",
+            "lineHeight": "{lineHeight.body}",
+            "letterSpacing": "{letterSpacing.body}"
+          }
+        },
+        "body-sm": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.body-sm}",
+            "fontWeight": "{fontWeight.body-sm}",
+            "lineHeight": "{lineHeight.body-sm}",
+            "letterSpacing": "{letterSpacing.body-sm}"
+          }
+        },
+        "caption": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.caption}",
+            "fontWeight": "{fontWeight.caption}",
+            "lineHeight": "{lineHeight.caption}",
+            "letterSpacing": "{letterSpacing.caption}"
+          }
+        },
+        "label": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.label}",
+            "fontWeight": "{fontWeight.label}",
+            "lineHeight": "{lineHeight.label}",
+            "letterSpacing": "{letterSpacing.label}"
+          }
+        },
+        "button": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.button}",
+            "fontWeight": "{fontWeight.button}",
+            "lineHeight": "{lineHeight.button}",
+            "letterSpacing": "{letterSpacing.button}"
+          }
+        },
+        "overline": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.overline}",
+            "fontWeight": "{fontWeight.overline}",
+            "lineHeight": "{lineHeight.overline}",
+            "letterSpacing": "{letterSpacing.overline}"
+          }
+        },
+        "mono-data": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.mono}",
+            "fontSize": "{fontSize.mono-data}",
+            "fontWeight": "{fontWeight.mono-data}",
+            "lineHeight": "{lineHeight.mono-data}",
+            "letterSpacing": "{letterSpacing.mono-data}"
+          }
+        },
+        "display-lg": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.display-lg}",
+            "fontWeight": "{fontWeight.display-lg}",
+            "lineHeight": "{lineHeight.display-lg}",
+            "letterSpacing": "{letterSpacing.display-lg}"
+          }
+        },
+        "display-xl": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.display-xl}",
+            "fontWeight": "{fontWeight.display-xl}",
+            "lineHeight": "{lineHeight.display-xl}",
+            "letterSpacing": "{letterSpacing.display-xl}"
+          }
+        },
+        "display-xxl": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.sans}",
+            "fontSize": "{fontSize.display-xxl}",
+            "fontWeight": "{fontWeight.display-xxl}",
+            "lineHeight": "{lineHeight.display-xxl}",
+            "letterSpacing": "{letterSpacing.display-xxl}"
+          }
+        }
+      },
+      "space": {
+        "0": {
+          "$type": "dimension",
+          "$value": "0px",
+          "$extensions": {
+            "desyng.source": "OBSERVED"
+          }
+        },
+        "1": {
+          "$type": "dimension",
+          "$value": "4px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "8px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": "12px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": "16px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "6": {
+          "$type": "dimension",
+          "$value": "24px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "8": {
+          "$type": "dimension",
+          "$value": "32px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "12": {
+          "$type": "dimension",
+          "$value": "48px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "16": {
+          "$type": "dimension",
+          "$value": "64px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "24": {
+          "$type": "dimension",
+          "$value": "96px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:ADR-SYSTEM.md"
+          }
+        },
+        "32": {
+          "$type": "dimension",
+          "$value": "128px",
+          "$extensions": {
+            "desyng.source": "RECOMMENDED(fills Tailwind-compatible scale)"
+          }
+        },
+        "0.5": {
+          "$type": "dimension",
+          "$value": "2px",
+          "$extensions": {
+            "desyng.source": "RECOMMENDED(fills Tailwind-compatible scale)"
+          }
+        }
+      },
+      "radius": {
+        "none": {
+          "$type": "dimension",
+          "$value": "0px"
+        },
+        "xs": {
+          "$type": "dimension",
+          "$value": "2px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+          }
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "4px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+          }
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "8px",
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+          }
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "8px",
+          "$description": "Capped at 8px — DESIGN-TOKENS-003's rules.shape.maxDefaultRadius is 8px; this theme has no radius token above md.",
+          "$extensions": {
+            "desyng.source": "NORMALIZED:rule-enforced-cap"
+          }
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": "8px",
+          "$description": "Capped at 8px, same reason as radius.lg.",
+          "$extensions": {
+            "desyng.source": "NORMALIZED:rule-enforced-cap"
+          }
+        },
+        "pill": {
+          "$type": "dimension",
+          "$value": "8px",
+          "$description": "DESIGN-TOKENS-003 explicitly sets rules.shape.pillByDefault: false — this theme has no true pill radius. Any component styled with --radius-pill (e.g. Button, Badge) renders as an 8px rounded rectangle instead of a capsule when this theme is active, honoring the rule at the token level rather than requiring every component to special-case the theme.",
+          "$extensions": {
+            "desyng.source": "NORMALIZED:rule-enforced(pillByDefault:false)"
+          }
+        },
+        "full": {
+          "$type": "dimension",
+          "$value": "8px",
+          "$description": "Capped at 8px, same reason as radius.pill.",
+          "$extensions": {
+            "desyng.source": "NORMALIZED:rule-enforced-cap"
+          }
+        }
+      },
+      "border": {
+        "width": {
+          "hairline": {
+            "$type": "dimension",
+            "$value": "1px",
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (border.hairline, thicker than executar-classic's 0.5px)"
+            }
+          },
+          "thin": {
+            "$type": "dimension",
+            "$value": "1px",
+            "$extensions": {
+              "desyng.source": "NORMALIZED:kept for structural compatibility, same as hairline in this theme"
+            }
+          },
+          "strong": {
+            "$type": "dimension",
+            "$value": "2px",
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (border.strong, new — used e.g. for the active-tab underline)"
+            }
+          }
+        }
+      },
+      "shadow": {
+        "none": {
+          "$type": "shadow",
+          "$value": "none"
+        },
+        "sm": {
+          "$type": "shadow",
+          "$value": "none",
+          "$description": "DESIGN-TOKENS-003's composition.shadow.default is 'none' and rules.effects.heavyShadow is false — static surfaces (cards, etc.) carry no shadow in this theme.",
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+          }
+        },
+        "md": {
+          "$type": "shadow",
+          "$value": "none",
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+          }
+        },
+        "hover": {
+          "$type": "shadow",
+          "$value": "0 8px 24px rgba(7,5,3,0.06)",
+          "$description": "DESIGN-TOKENS-003's composition.shadow.floating — the only elevation this theme defines, reserved for genuinely floating/interactive states.",
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003"
+          }
+        }
+      },
+      "opacity": {
+        "line-primary": {
+          "$type": "number",
+          "$value": 0.8,
+          "$extensions": {
+            "desyng.source": "NORMALIZED(ADR-SYSTEM.md SPEC-LINE-001 range 60-90%)"
+          }
+        },
+        "line-secondary": {
+          "$type": "number",
+          "$value": 0.3,
+          "$extensions": {
+            "desyng.source": "NORMALIZED(range 20-40%)"
+          }
+        },
+        "line-grid": {
+          "$type": "number",
+          "$value": 0.12,
+          "$extensions": {
+            "desyng.source": "NORMALIZED(range 8-15%)"
+          }
+        },
+        "disabled": {
+          "$type": "number",
+          "$value": 0.38,
+          "$extensions": {
+            "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (primitive.opacity.disabled)"
+          }
+        }
+      },
+      "motion": {
+        "duration": {
+          "micro": {
+            "$type": "duration",
+            "$value": "120ms",
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (primitive.motion.duration.fast)"
+            }
+          },
+          "default": {
+            "$type": "duration",
+            "$value": "200ms",
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (primitive.motion.duration.standard)"
+            }
+          },
+          "large": {
+            "$type": "duration",
+            "$value": "320ms",
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (primitive.motion.duration.slow)"
+            }
+          }
+        },
+        "easing": {
+          "out": {
+            "$type": "cubicBezier",
+            "$value": [
+              0,
+              0,
+              0.2,
+              1
+            ],
+            "$extensions": {
+              "desyng.source": "OBSERVED:DESIGN-TOKENS-003 (primitive.motion.easing.enter) — numerically identical to executar-classic's own easing.out"
+            }
+          }
+        },
+        "allowed_properties": [
+          "opacity",
+          "transform:translate",
+          "transform:scale-subtle",
+          "layer-depth(shadow/elevation)"
+        ],
+        "forbidden_properties": [
+          "bouncing",
+          "excessive-parallax",
+          "decorative-spin"
+        ]
       }
     }
   }

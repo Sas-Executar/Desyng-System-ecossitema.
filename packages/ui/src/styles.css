@@ -40,7 +40,7 @@
   border-color: var(--semantic-action-secondary);
   color: var(--semantic-action-secondary);
 }
-.ex-button--secondary:hover:not(:disabled) { background: var(--color-azure-2); }
+.ex-button--secondary:hover:not(:disabled) { background: var(--semantic-action-secondary_hover_surface); }
 
 .ex-button--tertiary {
   background: transparent;
