@@ -1,5 +1,17 @@
 # Desyng System — Ecossistema EXECUTAR
 
+> **Consolidação em andamento (2026-09-06):** este design system é a marca
+> **Custo Cognitivo**, junto com os repos `custocognitivoblog` e
+> `cognitivo-mapa` — os três evoluíram em paralelo sem se conhecer. O
+> `packages/design-tokens` e a governança de `design-system/` deste repo
+> estão sendo trazidos para dentro do
+> [`custocognitivoblog`](https://github.com/Sas-Executar/CustoCognitivoBlog)
+> (monorepo canônico da consolidação, PR
+> [#23](https://github.com/Sas-Executar/CustoCognitivoBlog/pull/23)), que
+> já tem CI/CD e hosting funcionando. Este repo continua existindo como
+> está — nada aqui foi arquivado — até a consolidação de `apps/admin` e
+> `apps/blog` (ainda não portada) estar concluída e validada.
+
 Repositório de documentação de design system / developer handoff do ecossistema EXECUTAR (App + Blog), produzido pelo workflow **Design Handoff** a partir do material bruto anexado (ADRs, formulário mestre de decisão, pack de referências visuais e handoff pack já existente).
 
 **➜ Comece por [`design-system/README.md`](./design-system/README.md).**
